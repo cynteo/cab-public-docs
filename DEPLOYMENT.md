@@ -140,7 +140,7 @@ git push
 
 1. **Add CNAME file**
    ```bash
-   echo "docs.cynteocloud.com" > CNAME
+   echo "cab-docs.cynteocloud.com" > CNAME
    git add CNAME
    git commit -m "Add custom domain"
    git push
@@ -154,7 +154,7 @@ git push
 
 3. **Enable in GitHub**
    - Settings → Pages
-   - Custom domain: `docs.cynteocloud.com`
+   - Custom domain: `cab-docs.cynteocloud.com`
    - ✅ Check "Enforce HTTPS"
 
 ---

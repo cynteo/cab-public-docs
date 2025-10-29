@@ -129,7 +129,7 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 ## 💬 Support
 
-- **Documentation:** [docs.cynteocloud.com](https://docs.cynteocloud.com)
+- **Documentation:** [cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)
 - **Email:** support@cynteocloud.com
 - **Response Time:** < 24 hours (< 4 hours for Enterprise)
 

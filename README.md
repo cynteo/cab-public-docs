@@ -101,7 +101,7 @@ We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for gu
 
 ## 💬 Support
 
-- **Documentation:** [docs.cynteocloud.com](https://docs.cynteocloud.com)
+- **Documentation:** [cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)
 - **Email:** support@cynteocloud.com
 - **Response Time:** < 24 hours (< 4 hours for Enterprise)
 

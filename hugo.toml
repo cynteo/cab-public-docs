@@ -1,5 +1,4 @@
-baseURL = 'https://cynteocloud.github.io/cab-public-docs/'
-# Update this to match your actual GitHub Pages URL
+baseURL = 'https://cab-docs.cynteocloud.com/'
 languageCode = 'en-us'
 title = 'Cynteo Alert Bridge Documentation'
 

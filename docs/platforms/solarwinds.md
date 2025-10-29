@@ -193,7 +193,7 @@ Support multiple SolarWinds boards:
 
 For technical support or questions about SolarWinds integration:
 - **Email:** support@cynteocloud.com
-- **Documentation:** https://docs.cynteocloud.com
+- **Documentation:** https://cab-docs.cynteocloud.com
 - **SolarWinds API:** [SolarWinds Service Desk API Documentation](https://help.samanage.com/api)
 
 ## Related Documentation

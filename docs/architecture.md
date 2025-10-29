@@ -168,4 +168,4 @@ To add a new ITSM platform:
 
 For technical support or questions about the architecture:
 - **Email:** support@cynteocloud.com
-- **Documentation:** https://docs.cynteocloud.com
+- **Documentation:** https://cab-docs.cynteocloud.com

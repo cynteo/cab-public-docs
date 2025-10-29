@@ -109,7 +109,7 @@ Get up and running with Cynteo Alert Bridge in under 10 minutes.
 
 ### **Get Help**
 - **Email:** support@cynteocloud.com
-- **Documentation:** https://docs.cynteocloud.com
+- **Documentation:** https://cab-docs.cynteocloud.com
 - **Issues:** [GitHub Issues](https://github.com/cynteo/cynteo-alert-bridge-docs/issues)
 
 ## Next Steps
@@ -123,4 +123,4 @@ Get up and running with Cynteo Alert Bridge in under 10 minutes.
 
 For technical support or questions:
 - **Email:** support@cynteocloud.com
-- **Documentation:** https://docs.cynteocloud.com
+- **Documentation:** https://cab-docs.cynteocloud.com

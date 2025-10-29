@@ -308,7 +308,7 @@ Common issues and solutions for Cynteo Alert Bridge.
 
 ### **Support Channels**
 - **Email:** support@cynteocloud.com
-- **Documentation:** https://docs.cynteocloud.com
+- **Documentation:** https://cab-docs.cynteocloud.com
 - **GitHub Issues:** [Report Issues](https://github.com/cynteo/cynteo-alert-bridge-docs/issues)
 
 ### **Information to Include**
