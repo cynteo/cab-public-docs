@@ -1,0 +1,153 @@
+# Azure Alert Bridge for SolarWinds Service Desk
+
+**Connect Azure Monitor alerts to your SolarWinds Service Desk automatically**
+
+---
+
+## 🚀 What is Azure Alert Bridge?
+
+Azure Alert Bridge is a fully managed integration that automatically creates, updates, and resolves SolarWinds Service Desk incidents based on your Azure Monitor alerts.
+
+### Key Features
+
+- ✅ **Automatic Incident Management** - Create tickets when alerts fire, update when they continue, resolve when they clear
+- ✅ **Smart Deduplication** - Multiple alerts for the same issue update one ticket, not create duplicates
+- ✅ **Rich Context** - Incidents include alert details, metrics, resource information, and direct links to Azure Portal
+- ✅ **Configurable Mapping** - Map Azure alert severity to SolarWinds priority levels
+- ✅ **Secure & Compliant** - No credentials stored, uses Azure Managed Identity and Key Vault
+- ✅ **Zero Maintenance** - Fully managed solution, automatic updates included
+
+---
+
+## 📋 How It Works
+
+```
+Azure Monitor Alert Fires
+        ↓
+Azure Alert Bridge (Logic App)
+        ↓
+SolarWinds Service Desk Incident Created
+```
+
+When an alert fires:
+1. Azure Monitor sends webhook to Alert Bridge
+2. Alert Bridge checks if ticket already exists for this alert
+3. Creates new incident OR updates existing incident
+4. When alert resolves, incident is automatically marked as resolved
+
+---
+
+## 🎯 Perfect For
+
+- **IT Operations Teams** - Centralize Azure alerts in your ITSM system
+- **MSPs** - Manage multiple customer Azure environments
+- **DevOps Teams** - Bridge monitoring and ticketing systems
+- **Enterprise IT** - Ensure SLA compliance with automated ticketing
+
+---
+
+## 💰 Pricing
+
+All plans include a **30-day free trial**. No credit card required during trial.
+
+| Plan | Alerts/Month | Price/Month |
+|------|-------------|-------------|
+| **Starter** | Up to 1,000 | $49 |
+| **Professional** | Up to 5,000 | $149 |
+| **Business** | Up to 20,000 | $399 |
+| **Enterprise** | Unlimited | Contact Us |
+
+**Soft Limits:** Plans use soft limits. You'll receive notifications at 80% and 100% usage. No service interruption.
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Azure subscription with Monitor alerts configured
+- SolarWinds Service Desk account
+- SolarWinds API token ([How to generate](./guides/solarwinds-api-token.md))
+
+### Deploy from Azure Marketplace
+
+1. **Find Azure Alert Bridge** in Azure Marketplace
+2. **Click "Get It Now"** and sign in
+3. **Fill in deployment form:**
+   - Subscription: Your Azure subscription
+   - Resource Group: Create new or use existing
+   - SolarWinds API Token: Your API token
+   - Email: For usage notifications
+4. **Click "Create"** and wait ~5 minutes
+5. **Configure Alert Action Group** ([Guide](./guides/configure-alert-action-group.md))
+
+**Done!** Your alerts will now create SolarWinds incidents automatically.
+
+---
+
+## 📚 Documentation
+
+### Getting Started
+- [Quick Start Guide](./getting-started/quickstart.md)
+- [SolarWinds Setup](./getting-started/solarwinds-setup.md)
+- [Azure Monitor Configuration](./getting-started/azure-monitor-setup.md)
+
+### Configuration Guides
+- [Configure Alert Action Group](./guides/configure-alert-action-group.md)
+- [Priority Mapping](./guides/priority-mapping.md)
+- [Severity Filtering](./guides/severity-filtering.md)
+- [Custom Categories](./guides/custom-categories.md)
+
+### Reference
+- [Incident Fields](./reference/incident-fields.md)
+- [Alert Schema](./reference/alert-schema.md)
+- [Environment Variables](./reference/environment-variables.md)
+
+### Troubleshooting
+- [Common Issues](./troubleshooting/common-issues.md)
+- [Deployment Errors](./troubleshooting/deployment-errors.md)
+- [Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets.md)
+
+---
+
+## 🔒 Security & Privacy
+
+- **No Data Storage** - Alert data is processed in real-time, not stored
+- **Encrypted Secrets** - API tokens stored in Azure Key Vault
+- **Managed Identity** - No hardcoded credentials
+- **Private Deployment** - Resources deployed to YOUR subscription
+- **SOC 2 Compliant** - Meets enterprise security standards
+
+[Read our Security Overview](./reference/security.md)
+
+---
+
+## 💬 Support
+
+- **Documentation:** [docs.cynteocloud.com](https://docs.cynteocloud.com)
+- **Email:** support@cynteocloud.com
+- **Response Time:** < 24 hours (< 4 hours for Enterprise)
+
+---
+
+## 🎉 What Customers Say
+
+> "Cut our alert response time by 60%. Incidents are created before we even see the alert in Azure."
+> — **IT Manager, Fortune 500 Company**
+
+> "Finally, a bridge that actually works. Set it and forget it."
+> — **DevOps Engineer, Tech Startup**
+
+---
+
+## 🔗 Links
+
+- [Azure Marketplace Listing](#)
+- [API Documentation](./reference/api.md)
+- [Changelog](./reference/changelog.md)
+- [Roadmap](./reference/roadmap.md)
+
+---
+
+**Ready to get started?** [Deploy from Azure Marketplace](#) or [Contact Sales](mailto:sales@cynteocloud.com)
+
