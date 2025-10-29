@@ -130,16 +130,6 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 ---
 
-## 🎉 What Customers Say
-
-> "Cut our alert response time by 60%. Incidents are created before we even see the alert in Azure."
-> — **IT Manager, Fortune 500 Company**
-
-> "Finally, a bridge that actually works. Set it and forget it."
-> — **DevOps Engineer, Tech Startup**
-
----
-
 ## 🔗 Links
 
 - [Azure Marketplace Listing](#)
