@@ -36,331 +36,108 @@ Azure Monitor supports 5 severity levels:
 
 ## Filtering Options
 
+Severity filtering is configured during deployment to control which alerts create incidents.
+
 ### Option 1: Whitelist Specific Severities
+Only create incidents for specific severities (e.g., only Sev0 and Sev1).
 
-Only create incidents for specific severities:
-
-```json
-{
-  "SEVERITY_FILTER": "Sev0,Sev1"
-}
-```
-
-**Result:** Only Sev0 and Sev1 alerts create incidents. Sev2/3/4 are ignored.
+**Result:** Only critical and error alerts create incidents. Warning and informational alerts are ignored.
 
 ### Option 2: Minimum Severity Threshold
+Create incidents for alerts at or above a severity threshold (e.g., Sev2 and above).
 
-Create incidents for this severity and above:
-
-```json
-{
-  "MIN_SEVERITY": "Sev2"
-}
-```
-
-**Result:** Sev0, Sev1, and Sev2 create incidents. Sev3/4 are ignored.
+**Result:** Critical, error, and warning alerts create incidents. Informational alerts are ignored.
 
 ### Option 3: No Filtering (Default)
+All severities create incidents for comprehensive tracking.
 
-All severities create incidents:
-
-```json
-{
-  "SEVERITY_FILTER": null,
-  "MIN_SEVERITY": null
-}
-```
+**To configure severity filtering**, specify your requirements during deployment or contact [support@cynteocloud.com](mailto:support@cynteocloud.com).
 
 ---
 
-## Configuration Examples
+## Common Filtering Scenarios
 
-### Example 1: Critical Only
+### Scenario 1: Critical Only
+Only create incidents for service outages (Sev0 alerts).
 
-Only create incidents for service outages:
+**Use Case:** Production environments where only critical issues need immediate attention through tickets.
 
-```json
-{
-  "SEVERITY_FILTER": "Sev0",
-  "SEV0_PRIORITY": "Critical"
-}
-```
+### Scenario 2: Critical and High
+Create incidents for major issues (Sev0 and Sev1 alerts).
 
-**Use Case:** Production environments where only critical issues need tickets.
+**Use Case:** Balance between noise reduction and comprehensive tracking of significant issues.
 
-### Example 2: Critical and High
+### Scenario 3: Warning and Above
+Exclude informational alerts (Sev3 and Sev4 filtered out).
 
-Create incidents for major issues:
+**Use Case:** Keep informational alerts in Azure Monitor but don't create tickets for them.
 
-```json
-{
-  "SEVERITY_FILTER": "Sev0,Sev1",
-  "SEV0_PRIORITY": "Critical",
-  "SEV1_PRIORITY": "High"
-}
-```
+### Scenario 4: Environment-Specific Filtering
+Different environments can have different filtering rules.
 
-**Use Case:** Balance between noise reduction and comprehensive tracking.
-
-### Example 3: Warning and Above
-
-Exclude informational alerts:
-
-```json
-{
-  "MIN_SEVERITY": "Sev2"
-}
-```
-
-**Use Case:** Keep informational alerts for monitoring but don't create tickets.
-
-### Example 4: Different Filters by Environment
-
-**Production Logic App:**
-```json
-{
-  "SEVERITY_FILTER": "Sev0,Sev1,Sev2",
-  "INCIDENT_PREFIX": "[PROD]"
-}
-```
-
-**Development Logic App:**
-```json
-{
-  "SEVERITY_FILTER": "Sev0",
-  "INCIDENT_PREFIX": "[DEV]"
-}
-```
+**Example:**
+- **Production:** Track Sev0, Sev1, and Sev2 alerts
+- **Development:** Only track Sev0 alerts
 
 ---
 
-## How to Configure
+## Understanding Your Filtering
 
-### Via Azure Portal
+When configured, severity filtering automatically processes alerts according to your rules:
 
-1. **Open Logic App** in Azure Portal
-2. Go to **Configuration** (under Settings)
-3. Add or update filter variables:
-   - `SEVERITY_FILTER` or
-   - `MIN_SEVERITY`
-4. Click **Save**
-5. Logic App restarts automatically
+- **Matching alerts** → Create/update incidents in SolarWinds
+- **Filtered alerts** → Logged but no incident created
 
-### Via Azure CLI
-
-```bash
-# Set whitelist filter
-az logicapp config appsettings set \
-  --name your-logic-app \
-  --resource-group your-rg \
-  --settings "SEVERITY_FILTER=Sev0,Sev1"
-
-# Set minimum severity
-az logicapp config appsettings set \
-  --name your-logic-app \
-  --resource-group your-rg \
-  --settings "MIN_SEVERITY=Sev2"
-```
-
-### Via ARM Template
-
-```json
-{
-  "type": "Microsoft.Logic/workflows",
-  "properties": {
-    "parameters": {
-      "SEVERITY_FILTER": {
-        "value": "Sev0,Sev1"
-      }
-    }
-  }
-}
-```
+You can verify filtering is working by checking SolarWinds for which incidents are being created.
 
 ---
 
-## Testing Filters
+## Advanced Filtering Scenarios
 
-### 1. Fire Test Alerts
+Alert Bridge supports sophisticated filtering strategies beyond simple severity levels:
 
-Create test alerts at different severities:
+### Resource Type Filtering
+Filter based on Azure resource type (e.g., only create tickets for VM and database alerts).
 
-```bash
-# Create Sev0 alert (should create incident)
-az monitor metrics alert create \
-  --name "test-sev0" \
-  --severity 0 \
-  --condition "avg Percentage CPU > 1"
+### Time-Based Filtering
+Apply different filtering rules based on time of day or day of week (e.g., all severities during business hours, critical only after hours).
 
-# Create Sev3 alert (should be filtered)
-az monitor metrics alert create \
-  --name "test-sev3" \
-  --severity 3 \
-  --condition "avg Percentage CPU > 1"
-```
+### Tag-Based Filtering
+Use Azure resource tags to control which resources create incidents.
 
-### 2. Check Logic App Runs
-
-1. Go to Logic App → **Runs history**
-2. Filtered alerts should show **skipped** or **succeeded** with no SolarWinds action
-
-### 3. Verify SolarWinds
-
-1. Check SolarWinds for new incidents
-2. Only non-filtered severities should appear
-
----
-
-## Advanced Filtering
-
-### Custom Logic App Modifications
-
-For complex filtering requirements, modify the Logic App workflow:
-
-#### Filter by Resource Type
-
-```json
-{
-  "condition": {
-    "or": [
-      {
-        "equals": [
-          "@triggerBody()?['data']?['essentials']?['severity']",
-          "Sev0"
-        ]
-      },
-      {
-        "and": [
-          {"equals": ["@triggerBody()?['data']?['essentials']?['severity']", "Sev1"]},
-          {"contains": ["@triggerBody()?['data']?['essentials']?['alertTargetIDs']", "virtualMachines"]}
-        ]
-      }
-    ]
-  }
-}
-```
-
-**Result:** All Sev0 + Sev1 VM alerts only
-
-#### Filter by Time of Day
-
-Only create incidents during business hours:
-
-```json
-{
-  "condition": {
-    "or": [
-      {"equals": ["@triggerBody()?['data']?['essentials']?['severity']", "Sev0"]},
-      {
-        "and": [
-          {"greaterOrEquals": ["@int(formatDateTime(utcNow(), 'HH'))", 8]},
-          {"lessOrEquals": ["@int(formatDateTime(utcNow(), 'HH'))", 17]}
-        ]
-      }
-    ]
-  }
-}
-```
-
-**Result:** Sev0 24/7, other severities only 8 AM - 5 PM
-
-#### Filter by Resource Tags
-
-Only create incidents for tagged resources:
-
-```json
-{
-  "condition": {
-    "contains": [
-      "@string(triggerBody()?['data']?['alertContext']?['properties'])",
-      "CreateTicket=true"
-    ]
-  }
-}
-```
+### Multi-Criteria Filtering
+Combine severity with other factors like subscription, resource group, or alert type.
 
 ---
 
 ## Filter Strategy Best Practices
 
-### Start Strict, Relax Later
+### Start Strict, Relax as Needed
+Organizations often start with stricter filtering (critical alerts only) and gradually expand to include additional severities based on operational needs.
 
-1. **Week 1:** `Sev0` only
-2. **Week 2:** Add `Sev1` if needed
-3. **Week 3:** Add `Sev2` if missing important alerts
+### Environment-Appropriate Filtering
 
-### Different Filters by Environment
-
-| Environment | Recommended Filter |
-|-------------|-------------------|
+| Environment | Typical Filter |
+|-------------|----------------|
 | **Production** | Sev0, Sev1, Sev2 |
 | **Staging** | Sev0, Sev1 |
 | **Development** | Sev0 only |
-| **Test** | None (no Alert Bridge) |
 
-### Monitor Filtered Alerts
-
-Even if not creating tickets, monitor filtered alerts:
-
-1. Set up Azure Monitor dashboard
-2. Track Sev3/Sev4 trends
-3. Adjust filters if patterns emerge
+### Monitor the Full Picture
+Even when alerts are filtered from ticket creation, they remain visible in Azure Monitor for trending and analysis.
 
 ---
 
-## Common Scenarios
+## Questions About Filtering?
 
-### Scenario 1: Ticket Overload
-
-**Problem:** Too many low-priority tickets
-
-**Solution:**
-```json
-{
-  "SEVERITY_FILTER": "Sev0,Sev1"
-}
-```
-
-### Scenario 2: Missing Critical Alerts
-
-**Problem:** Some critical alerts not creating tickets
-
-**Solution:** Check that alerts are marked Sev0 or Sev1 in Azure
-
-### Scenario 3: After-Hours Noise
-
-**Problem:** Too many tickets outside business hours
-
-**Solution:** Use time-based filtering (see Advanced Filtering above)
-
----
-
-## Troubleshooting
-
-### Filter Not Working
-
-1. **Check syntax** - Comma-separated, no spaces: `"Sev0,Sev1"`
-2. **Case-sensitive** - Use `Sev0` not `sev0` or `SEV0`
-3. **Restart Logic App** - Disable/enable to clear cache
-
-### All Alerts Still Creating Tickets
-
-1. Verify filter variable exists in Logic App config
-2. Check Logic App run history shows filter being applied
-3. Ensure no typos: `SEVERITY_FILTER` not `SEVERITYFILTER`
-
-### Wrong Alerts Filtered
-
-1. Check Azure alert rule severity configuration
-2. Verify severity in Logic App run history inputs
-3. Confirm filter matches intended severity values
+To configure or adjust severity filtering for your deployment, contact [support@cynteocloud.com](mailto:support@cynteocloud.com).
 
 ---
 
 ## See Also
 
 - [Priority Mapping](./priority-mapping) - Map severities to priorities
-- [Environment Variables](../reference/environment-variables) - All config options
+- [Configuration Options](../reference/environment-variables) - Available settings
 - [Azure Monitor Setup](../getting-started/azure-monitor-setup) - Alert configuration
 
 ---

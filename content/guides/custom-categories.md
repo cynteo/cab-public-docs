@@ -47,242 +47,120 @@ Cloud Services
 
 ---
 
-## Creating Categories in SolarWinds
+## Setting Up Categories in SolarWinds
 
-### Step 1: Create Category
+For Alert Bridge to use custom categories, they must first exist in your SolarWinds instance:
 
-1. Log into SolarWinds Service Desk
-2. Go to **Setup** → **Incidents** → **Categories**
-3. Click **"+ Add Category"**
-4. Enter name: `Cloud Services`
-5. Click **Save**
+### Category Structure
 
-### Step 2: Create Subcategory
+Categories follow a two-level hierarchy:
+```
+Category
+  └── Subcategory
+```
 
-1. Under the category created above
-2. Click **"+ Add Subcategory"**
-3. Enter name: `Azure Alerts`
-4. Click **Save**
+Example:
+```
+Cloud Services
+  └── Azure Monitor
+```
 
-### Step 3: Note the Exact Names
+### Creating Categories
 
-⚠️ **Important:** Write down the EXACT names (case-sensitive)
+Your SolarWinds administrator can create categories:
+
+1. **Setup** → **Incidents** → **Categories**
+2. Add the desired category
+3. Add subcategories under that category
+4. Note the exact names (case-sensitive)
 
 ---
 
 ## Configuring Alert Bridge
 
-### Via Environment Variables
+Alert Bridge can be configured to use your custom SolarWinds categories during deployment.
 
-Update these in your Logic App configuration:
-
-```json
-{
-  "INCIDENT_CATEGORY": "Cloud Services",
-  "INCIDENT_SUBCATEGORY": "Azure Alerts"
-}
-```
-
-### Steps to Configure
-
-1. **Open Logic App** in Azure Portal
-2. Go to **Configuration** (under Settings)
-3. Find or add these variables:
-   - `INCIDENT_CATEGORY`
-   - `INCIDENT_SUBCATEGORY`
-4. Enter your SolarWinds category names
-5. Click **Save**
-6. Logic App restarts automatically
+**To use custom categories**, provide the exact category and subcategory names during deployment or contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to update your configuration.
 
 ---
 
-## Configuration Examples
+## Category Examples
 
-### Example 1: Infrastructure Alerts
+Alert Bridge supports various categorization strategies:
 
-```json
-{
-  "INCIDENT_CATEGORY": "Infrastructure",
-  "INCIDENT_SUBCATEGORY": "Cloud Monitoring"
-}
-```
+### Example 1: Infrastructure-Based
+- **Category:** Infrastructure
+- **Subcategory:** Cloud Monitoring
 
 ### Example 2: Department-Specific
-
-```json
-{
-  "INCIDENT_CATEGORY": "IT Operations",
-  "INCIDENT_SUBCATEGORY": "Azure Platform"
-}
-```
+- **Category:** IT Operations
+- **Subcategory:** Azure Platform
 
 ### Example 3: Service-Based
+- **Category:** Platform Services
+- **Subcategory:** Monitoring & Alerting
 
-```json
-{
-  "INCIDENT_CATEGORY": "Platform Services",
-  "INCIDENT_SUBCATEGORY": "Monitoring & Alerting"
-}
-```
-
-### Example 4: Multi-Environment Setup
-
-**Production Logic App:**
-```json
-{
-  "INCIDENT_CATEGORY": "Production",
-  "INCIDENT_SUBCATEGORY": "Azure Alerts",
-  "INCIDENT_PREFIX": "[PROD]"
-}
-```
-
-**Development Logic App:**
-```json
-{
-  "INCIDENT_CATEGORY": "Development",
-  "INCIDENT_SUBCATEGORY": "Azure Alerts",
-  "INCIDENT_PREFIX": "[DEV]"
-}
-```
+### Example 4: Environment-Based
+Different environments can use different categories:
+- **Production:** Production / Azure Alerts
+- **Development:** Development / Azure Alerts
 
 ---
 
-## Dynamic Categorization
+## Advanced Categorization
+
+Alert Bridge supports dynamic categorization strategies:
 
 ### By Resource Type
-
-Create different categories for different Azure resources:
-
-| Alert Target | Category | Subcategory |
-|--------------|----------|-------------|
-| Virtual Machines | Infrastructure | Compute |
-| SQL Databases | Databases | Azure SQL |
-| Storage Accounts | Storage | Azure Storage |
-| App Services | Applications | Web Apps |
-
-**Implementation:** Requires Logic App workflow modification (contact support)
+Different Azure resource types can route to different categories:
+- **Virtual Machines** → Infrastructure / Compute
+- **SQL Databases** → Databases / Azure SQL
+- **Storage Accounts** → Storage / Azure Storage
+- **App Services** → Applications / Web Apps
 
 ### By Subscription
-
-Route alerts from different subscriptions to different categories:
-
-| Subscription | Category | Subcategory |
-|--------------|----------|-------------|
-| Production | Production Services | Azure Monitor |
-| Development | Development | Azure Alerts |
-| Shared Services | Shared Infrastructure | Monitoring |
+Alerts from different Azure subscriptions can use different categories for clear separation.
 
 ### By Resource Tags
-
-Use Azure resource tags to determine category:
-
-**Resource Tag:**
-```
-Environment: Production
-Service: Web
-```
-
-**Resulting Category:**
-```
-Category: Production
-Subcategory: Web Services
-```
+Azure resource tags can influence category assignment, enabling fine-grained control based on your tagging strategy.
 
 ---
 
 ## Category-Based Assignment
 
-Use categories to auto-assign incidents to teams:
+Categories enable powerful routing capabilities in SolarWinds:
 
-### SolarWinds Assignment Rules
+### Automatic Team Assignment
 
-1. Go to **Setup** → **Assignment Rules**
-2. Create rule:
-   ```
-   IF category = "Infrastructure"
-   AND subcategory = "Azure Monitor"
-   THEN assign to "Cloud Operations Team"
-   ```
+SolarWinds assignment rules can use categories to automatically route incidents:
+
+**Example Rule:**
+```
+IF category = "Infrastructure"  
+AND subcategory = "Azure Monitor"
+THEN assign to "Cloud Operations Team"
+```
 
 ### Benefits
 
-- ✅ Automatic routing to correct team
-- ✅ No manual assignment needed
+- ✅ Automatic routing to the right team
+- ✅ No manual triage needed
 - ✅ Consistent incident handling
-- ✅ Clear ownership
+- ✅ Clear ownership from creation
 
 ---
 
-## Testing Categories
+## Verifying Categories
 
-### 1. Fire Test Alert
+Once configured, you can verify categories are being applied correctly:
 
-Trigger an Azure alert that will create an incident
+### Check SolarWinds Incidents
 
-### 2. Check Incident in SolarWinds
+1. Open an incident created by Alert Bridge
+2. View the **Category** and **Subcategory** fields
+3. Confirm they match your configuration
 
-1. Open the created incident
-2. Verify **Category** field shows your configured value
-3. Verify **Subcategory** field shows your configured value
-
-### 3. Review Logic App Run
-
-1. Go to Logic App → **Runs history**
-2. Click latest run
-3. Expand "Create or Update Incident" action
-4. Check **Inputs** to see category being sent:
-
-```json
-{
-  "incident": {
-    "category": {
-      "name": "Cloud Services"
-    },
-    "subcategory": {
-      "name": "Azure Alerts"
-    }
-  }
-}
-```
-
----
-
-## Common Issues
-
-### Category Not Found
-
-**Problem:** SolarWinds returns error: "Category 'XYZ' not found"
-
-**Solutions:**
-1. Verify category exists in SolarWinds
-2. Check spelling (case-sensitive!)
-3. Check for extra spaces
-4. Try listing all categories via API:
-
-```bash
-curl -X GET "https://api.samanage.com/categories.json" \
-  -H "X-Samanage-Authorization: Bearer YOUR_TOKEN"
-```
-
-### Subcategory Not Under Category
-
-**Problem:** Incident created but wrong category/subcategory
-
-**Solutions:**
-1. Ensure subcategory is nested under the correct category
-2. Check SolarWinds category hierarchy
-3. Verify both category and subcategory names are exact matches
-
-### Configuration Not Applied
-
-**Problem:** Still using default categories after config change
-
-**Solutions:**
-1. Restart Logic App (disable/enable)
-2. Check variable names are correct:
-   - `INCIDENT_CATEGORY` (not `CATEGORY`)
-   - `INCIDENT_SUBCATEGORY` (not `SUBCATEGORY`)
-3. Verify values saved in Logic App config
+The category and subcategory determine how the incident is routed and tracked in your SolarWinds system.
 
 ---
 
@@ -351,10 +229,16 @@ Generate reports by category:
 
 ---
 
+## Questions About Categories?
+
+To configure custom categories for your deployment, contact [support@cynteocloud.com](mailto:support@cynteocloud.com) with your desired category structure.
+
+---
+
 ## See Also
 
-- [SolarWinds Setup](../getting-started/solarwinds-setup) - Create categories
-- [Environment Variables](../reference/environment-variables) - All config options
+- [SolarWinds Setup](../getting-started/solarwinds-setup) - SolarWinds prerequisites
+- [Configuration Options](../reference/environment-variables) - Available settings
 - [Priority Mapping](./priority-mapping) - Priority configuration
 
 ---

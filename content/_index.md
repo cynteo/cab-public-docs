@@ -70,23 +70,26 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 ### Prerequisites
 
-- Azure subscription with Monitor alerts configured
+Before deployment, ensure you have:
+- Azure subscription with appropriate permissions
 - SolarWinds Service Desk account
 - SolarWinds API token ([How to generate](./guides/solarwinds-api-token))
 
-### Deploy from Azure Marketplace
+### Deployment Process
 
 1. **Find Cynteo Alert Bridge** in Azure Marketplace
-2. **Click "Get It Now"** and sign in
-3. **Fill in deployment form:**
-   - Subscription: Your Azure subscription
-   - Resource Group: Create new or use existing
-   - SolarWinds API Token: Your API token
-   - Email: For usage notifications
-4. **Click "Create"** and wait ~5 minutes
-5. **Configure Alert Action Group** ([Guide](./guides/configure-alert-action-group))
+2. **Start deployment** and provide required information
+3. **Configure settings:**
+   - Azure subscription and resource group
+   - SolarWinds API credentials
+   - Incident preferences (category, priority mapping)
+   - Contact email for notifications
+4. **Deploy** (~5-10 minutes)
+5. **Connect Azure Alerts** via Action Groups
 
-**Done!** Your alerts will now create SolarWinds incidents automatically.
+**That's it!** Azure alerts will now automatically create and manage SolarWinds incidents.
+
+For detailed deployment instructions, see the [Quick Start Guide](./getting-started/quickstart).
 
 ---
 

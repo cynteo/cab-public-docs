@@ -1,112 +1,51 @@
 # Cynteo Alert Bridge Documentation
 
-Welcome to the Cynteo Alert Bridge documentation! This site provides everything you need to deploy, configure, and troubleshoot your Azure Monitor to SolarWinds Service Desk integration.
+Official documentation for Cynteo Alert Bridge - the automated integration between Azure Monitor and SolarWinds Service Desk.
+
+## 📖 About
+
+This repository contains the complete documentation for Cynteo Alert Bridge, including:
+- Deployment guides
+- Configuration options
+- Feature explanations
+- Troubleshooting resources
+- API reference
+
+## 🌐 View Documentation
+
+Visit **[https://cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)** for the full documentation site.
 
 ## 🚀 Quick Links
 
-- **[View Documentation](https://cynteocloud.github.io/cab-public-docs/)** - Live documentation site
-- **[Get Started](./content/getting-started/quickstart)** - Deploy in 15 minutes
-- **[Troubleshooting](./content/troubleshooting/common-issues)** - Fix common issues
-- **[All Guides](./content/guides/)** - Configuration and customization
+- **[Get Started](https://cab-docs.cynteocloud.com/getting-started/quickstart)** - Deployment guide
+- **[Features](https://cab-docs.cynteocloud.com#-key-features)** - What Alert Bridge can do
+- **[Troubleshooting](https://cab-docs.cynteocloud.com/troubleshooting/common-issues)** - Common issues
+- **[Support](mailto:support@cynteocloud.com)** - Get help
 
 ---
 
-## 📚 Local Development
+## 📝 Documentation Updates
 
-This documentation site is built with [Hugo](https://gohugo.io/).
+This documentation is maintained by the Cynteo team. If you find errors or have suggestions:
 
-### Prerequisites
+- **Email:** [support@cynteocloud.com](mailto:support@cynteocloud.com)
+- **Subject:** "Documentation Feedback"
+- **Include:** Page URL and suggested improvement
 
-- [Hugo Extended](https://gohugo.io/installation/) (v0.121.0 or later)
-- Git
-
-### Running Locally
-
-```bash
-# Clone the repository
-git clone https://github.com/cynteocloud/cab-public-docs.git
-cd cab-public-docs
-
-# Start Hugo development server
-hugo server -D
-
-# Open browser to http://localhost:1313
-```
-
-### Building for Production
-
-```bash
-# Build static site
-hugo --gc --minify
-
-# Output will be in ./public/
-```
-
----
-
-## 📂 Repository Structure
-
-```
-cab-public-docs/
-├── content/              # All documentation content
-│   ├── _index.md        # Homepage
-│   ├── getting-started/ # Getting started guides
-│   ├── guides/          # Configuration guides
-│   ├── reference/       # Technical reference
-│   └── troubleshooting/ # Troubleshooting guides
-├── .github/
-│   └── workflows/
-│       └── hugo.yml     # GitHub Actions deployment
-├── hugo.toml            # Hugo configuration
-└── README.md            # This file
-```
-
----
-
-## 🚀 Deployment
-
-This site automatically deploys to GitHub Pages when changes are pushed to the `main` branch using GitHub Actions.
-
-### Manual Deployment
-
-If you need to manually deploy:
-
-1. Make sure GitHub Pages is enabled in repository settings
-2. Set source to "GitHub Actions"
-3. Push changes to `main` branch
-4. GitHub Actions will automatically build and deploy
-
----
-
-## 📝 Contributing
-
-We welcome contributions! Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
----
-
-## 📊 What's New
-
-### Version 1.4.5 (Latest)
-
-**Fixed:**
-- ✅ Incident resolution now correctly updates SolarWinds state
-- ✅ Smart comment deduplication prevents ticket spam
-- ✅ Improved error handling for API timeouts
-
-**Added:**
-- 🎯 New priority mapping options
-- 📊 Enhanced logging and diagnostics
+We review all feedback and update documentation regularly.
 
 ---
 
 ## 💬 Support
 
 - **Documentation:** [cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)
-- **Email:** support@cynteocloud.com
-- **Response Time:** < 24 hours (< 4 hours for Enterprise)
+- **Email:** [support@cynteocloud.com](mailto:support@cynteocloud.com)
+- **Sales:** [sales@cynteocloud.com](mailto:sales@cynteocloud.com)
 
 ---
 
-## 📄 License
+## 📄 About Cynteo
+
+Cynteo Cloud provides enterprise-grade cloud integration solutions. Learn more at [cynteocloud.com](https://cynteocloud.com).
 
 © 2025 Cynteo Cloud. All rights reserved.

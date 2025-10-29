@@ -1,18 +1,18 @@
 ---
-title: "Environment Variables"
-description: "Configuration options and environment variables for Cynteo Alert Bridge"
+title: "Configuration Options"
+description: "Available configuration options for Cynteo Alert Bridge"
 weight: 4
 ---
 
-# Environment Variables
+# Configuration Options
 
-Configuration reference for customizing Cynteo Alert Bridge behavior.
+Learn about the configuration options available during deployment of Cynteo Alert Bridge.
 
 ---
 
-## Required Variables
+## Required Settings
 
-These are set during deployment and must be configured:
+These are configured during initial deployment:
 
 | Variable | Type | Description | Example |
 |----------|------|-------------|---------|
@@ -22,9 +22,9 @@ These are set during deployment and must be configured:
 
 ---
 
-## Optional Variables
+## Optional Settings
 
-Customize incident creation behavior:
+These options can be configured during deployment to customize behavior:
 
 ### Incident Mapping
 
@@ -62,9 +62,13 @@ Customize incident creation behavior:
 | `TIMEZONE` | String | `"UTC"` | Timezone for timestamps |
 | `ENABLE_DEBUG_LOGGING` | Boolean | `false` | Verbose logging |
 
+**Note:** Configuration options are set during deployment. Contact your administrator or [support@cynteocloud.com](mailto:support@cynteocloud.com) for configuration changes.
+
 ---
 
 ## Configuration Examples
+
+These examples show how different settings affect incident creation:
 
 ### Example 1: Custom Priority Mapping
 
@@ -128,110 +132,19 @@ For different environments (dev/staging/prod), use different prefixes:
 
 ---
 
-## How to Update Variables
+## Understanding Your Configuration
 
-### Via Azure Portal
+The deployment wizard collects these settings and applies them automatically. All configuration is managed by your Azure administrator.
 
-1. Go to Logic App resource
-2. Click **Configuration** (under Settings)
-3. Find the variable
-4. Update the value
-5. Click **Save**
-6. Logic App will restart automatically
-
-### Via Azure CLI
-
-```bash
-az logicapp config appsettings set \
-  --name your-logic-app \
-  --resource-group your-rg \
-  --settings "SEV1_PRIORITY=Critical"
-```
-
-### Via ARM Template
-
-```json
-{
-  "type": "Microsoft.Logic/workflows",
-  "properties": {
-    "parameters": {
-      "SEV1_PRIORITY": {
-        "value": "Critical"
-      }
-    }
-  }
-}
-```
-
----
-
-## Validation
-
-### Check Current Configuration
-
-1. Go to Logic App
-2. **Overview** → **JSON View**
-3. Look for `parameters` section
-4. Verify values
-
-### Test Changes
-
-After updating variables:
-
-1. Trigger a test alert
-2. Check Logic App run history
-3. Verify incident created correctly
-4. Confirm new values applied
-
----
-
-## Security Considerations
-
-### Secret Management
-
-- ❌ **Never** commit API tokens to git
-- ✅ **Always** use Key Vault references
-- ✅ Use Managed Identity when possible
-
-### Key Vault Integration
-
-Reference secrets from Key Vault:
-
-```json
-{
-  "SOLARWINDS_API_TOKEN": "@Microsoft.KeyVault(SecretUri=https://your-vault.vault.azure.net/secrets/solarwinds-token/)"
-}
-```
-
----
-
-## Troubleshooting
-
-### Variable Not Taking Effect
-
-1. **Check Syntax** - Ensure correct JSON format
-2. **Restart Logic App** - May need manual restart
-3. **Clear Cache** - Disable/enable Logic App
-4. **Check Run History** - Verify new value in inputs
-
-### Invalid Values
-
-Common mistakes:
-
-| Issue | Solution |
-|-------|----------|
-| Priority not recognized | Must match SolarWinds values exactly |
-| Category not found | Create category in SolarWinds first |
-| Boolean as string | Use `true`/`false` not `"true"`/`"false"` |
-| Timezone invalid | Use IANA timezone names |
+For questions about your specific configuration or to request changes, contact [support@cynteocloud.com](mailto:support@cynteocloud.com).
 
 ---
 
 ## See Also
 
-- [Priority Mapping Guide](../guides/priority-mapping) - Detailed mapping options
-- [Severity Filtering Guide](../guides/severity-filtering) - Filter configuration
-- [SolarWinds Setup](../getting-started/solarwinds-setup) - Category creation
+- [Priority Mapping](../guides/priority-mapping) - How severities map to priorities
+- [Severity Filtering](../guides/severity-filtering) - Alert filtering options
+- [Custom Categories](../guides/custom-categories) - SolarWinds categories
 
 ---
 

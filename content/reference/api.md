@@ -12,17 +12,16 @@ Technical reference for integrating with Cynteo Alert Bridge.
 
 ## Webhook Endpoint
 
-Alert Bridge exposes a webhook endpoint that accepts Azure Monitor alerts.
+Alert Bridge provides a secure webhook endpoint that accepts Azure Monitor alerts.
 
 ### Endpoint URL
 
-After deployment, your Logic App provides a webhook URL:
+After deployment, a unique webhook URL is generated for your instance. This URL is:
+- Automatically configured in your Action Groups during setup
+- Protected with signature-based authentication
+- Unique to your deployment
 
-```
-https://prod-XX.region.logic.azure.com:443/workflows/{workflow-id}/triggers/manual/paths/invoke?api-version=2016-10-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig={signature}
-```
-
-**🔒 Security:** Keep this URL secret - it contains an authentication signature.
+**🔒 Security:** The webhook URL contains authentication tokens and should be kept confidential.
 
 ---
 
@@ -146,171 +145,62 @@ Content-Type: application/json
 
 ---
 
-## Testing the API
+## Testing the Integration
 
-### Using cURL
+### Using Azure Action Group Test
 
-```bash
-curl -X POST "https://your-logic-app-url" \
-  -H "Content-Type: application/json" \
-  -d @test-alert.json
-```
+The easiest way to test Alert Bridge:
 
-### Using PowerShell
+1. Go to **Azure Portal** → **Monitor** → **Action groups**
+2. Select your action group
+3. Click **"Test"**
+4. Select the webhook action
+5. Click **"Test"**
+6. Check SolarWinds for the test incident
 
-```powershell
-$uri = "https://your-logic-app-url"
-$body = Get-Content -Path "test-alert.json" -Raw
+### Using Azure Alerts
 
-Invoke-RestMethod -Uri $uri -Method Post -Body $body -ContentType "application/json"
-```
+Fire a real alert to test end-to-end functionality:
 
-### Using Postman
-
-1. Create new POST request
-2. URL: Your Logic App webhook URL
-3. Headers: `Content-Type: application/json`
-4. Body: Paste test alert JSON
-5. Send
-
-### Test Alert JSON
-
-```json
-{
-  "schemaId": "azureMonitorCommonAlertSchema",
-  "data": {
-    "essentials": {
-      "alertId": "/subscriptions/test/providers/Microsoft.AlertsManagement/alerts/test-123",
-      "alertRule": "Test Alert",
-      "severity": "Sev2",
-      "signalType": "Metric",
-      "monitorCondition": "Fired",
-      "monitoringService": "Platform",
-      "alertTargetIDs": ["/subscriptions/test/resourceGroups/test/providers/Microsoft.Compute/virtualMachines/test-vm"],
-      "originAlertId": "test-origin-123",
-      "firedDateTime": "2025-10-29T10:00:00.0000000Z",
-      "description": "This is a test alert"
-    },
-    "alertContext": {
-      "properties": {},
-      "conditionType": "SingleResourceMultipleMetricCriteria",
-      "condition": {
-        "allOf": [{
-          "metricName": "Percentage CPU",
-          "metricValue": 95.5,
-          "operator": "GreaterThan",
-          "threshold": "90"
-        }]
-      }
-    }
-  }
-}
-```
+1. Create a test alert rule with easy-to-trigger conditions
+2. Wait for the alert to fire
+3. Verify incident appears in SolarWinds
+4. Check that all fields are populated correctly
 
 ---
 
-## Custom Integrations
+## Integration Security
 
-### Direct API Calls
+### Webhook Authentication
 
-You can call the webhook from any system that can make HTTP requests:
+- Each deployment has a unique, signed webhook URL
+- Authentication is handled automatically
+- URLs contain time-limited signatures
 
-**Node.js:**
-```javascript
-const axios = require('axios');
+### Best Practices
 
-const alert = {
-  schemaId: "azureMonitorCommonAlertSchema",
-  data: { /* alert data */ }
-};
-
-await axios.post('https://your-logic-app-url', alert);
-```
-
-**Python:**
-```python
-import requests
-
-alert = {
-    "schemaId": "azureMonitorCommonAlertSchema",
-    "data": { } # alert data
-}
-
-response = requests.post('https://your-logic-app-url', json=alert)
-```
-
-**Go:**
-```go
-import (
-    "bytes"
-    "net/http"
-    "encoding/json"
-)
-
-alert := map[string]interface{}{
-    "schemaId": "azureMonitorCommonAlertSchema",
-    "data": map[string]interface{}{ /* alert data */ },
-}
-
-body, _ := json.Marshal(alert)
-http.Post("https://your-logic-app-url", "application/json", bytes.NewBuffer(body))
-```
+- **Keep webhook URLs confidential** - treat them like passwords
+- **Use Azure Action Groups** - don't share webhook URLs externally
+- **Monitor for unauthorized access** - review execution logs regularly
 
 ---
 
-## Webhook Security
+## Monitoring Integration Health
 
-### URL Signature
+### Check Processing Status
 
-The webhook URL contains a signature (`sig` parameter) that validates requests. Do not share this URL publicly.
+You can monitor Alert Bridge processing through Azure:
 
-### IP Whitelisting
+1. **Azure Portal** → Your Alert Bridge resource
+2. View **Run History** to see recent alert processing
+3. Check for any failures or errors
+4. Review execution times
 
-Optionally restrict access to Azure Monitor IP ranges:
+### Common Status Indicators
 
-```json
-{
-  "allowedIPs": [
-    "13.66.141.0/24",
-    "13.67.8.0/24",
-    "13.69.64.0/24"
-    // Add more Azure IP ranges
-  ]
-}
-```
-
-### Regenerate Signature
-
-To rotate the webhook URL:
-
-1. Go to Logic App → **Logic app designer**
-2. Click trigger
-3. Click **Regenerate**
-4. Update action groups with new URL
-
----
-
-## Monitoring & Logs
-
-### View API Calls
-
-1. Logic App → **Overview**
-2. **Runs history** shows all webhook calls
-3. Click a run to see:
-   - Input (alert JSON)
-   - Output (SolarWinds response)
-   - Execution time
-   - Errors
-
-### Enable Diagnostic Logs
-
-```bash
-az monitor diagnostic-settings create \
-  --name logic-app-logs \
-  --resource /subscriptions/{sub}/resourceGroups/{rg}/providers/Microsoft.Logic/workflows/{name} \
-  --logs '[{"category": "WorkflowRuntime", "enabled": true}]' \
-  --workspace /subscriptions/{sub}/resourceGroups/{rg}/providers/Microsoft.OperationalInsights/workspaces/{workspace}
-```
+- ✅ **Succeeded** - Alert processed and incident created/updated
+- ⚠️ **Failed** - Error occurred (check details)
+- ⏸️ **Skipped** - Alert filtered (by severity or other rules)
 
 ---
 
