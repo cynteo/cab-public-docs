@@ -1,6 +1,6 @@
 # SolarWinds Service Desk Setup
 
-Configure SolarWinds for Azure Alert Bridge integration.
+Configure SolarWinds for Cynteo Alert Bridge integration.
 
 ---
 
@@ -27,7 +27,7 @@ Configure SolarWinds for Azure Alert Bridge integration.
 ### Step 3: Generate Token
 
 1. Click **"Generate New Token"** or **"Create API Token"**
-2. **Name:** `Azure Alert Bridge`
+2. **Name:** `Cynteo Alert Bridge`
 3. **Permissions:** Ensure the following are enabled:
    - ✅ Read Incidents
    - ✅ Create Incidents
@@ -77,7 +77,7 @@ curl -X GET "https://api.samanage.com/incidents.json" \
 3. **Name:** `Azure Monitor`
 4. **Save**
 
-You can reference this during Azure Alert Bridge deployment.
+You can reference this during Cynteo Alert Bridge deployment.
 
 #### 2. Create Dedicated Subcategory (Optional)
 
@@ -158,7 +158,7 @@ curl -X POST "https://api.samanage.com/incidents.json" \
   -H "Accept: application/json" \
   -d '{
     "incident": {
-      "name": "Test Incident from Azure Alert Bridge",
+      "name": "Test Incident from Cynteo Alert Bridge",
       "priority": "Low",
       "description": "This is a test to verify API access",
       "requester": {
@@ -209,7 +209,7 @@ curl -X POST "https://api.samanage.com/incidents.json" \
 
 Now that SolarWinds is configured:
 
-1. **[Deploy Azure Alert Bridge](./quickstart.md)** from Azure Marketplace
+1. **[Deploy Cynteo Alert Bridge](./quickstart.md)** from Azure Marketplace
 2. **[Configure Alert Action Groups](../guides/configure-alert-action-group.md)**
 3. **[Test the integration](./quickstart.md#step-4-test-it)**
 

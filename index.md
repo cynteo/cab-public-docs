@@ -1,12 +1,12 @@
-# Azure Alert Bridge for SolarWinds Service Desk
+# Cynteo Alert Bridge for SolarWinds Service DeskU
 
 **Connect Azure Monitor alerts to your SolarWinds Service Desk automatically**
 
 ---
 
-## 🚀 What is Azure Alert Bridge?
+## 🚀 What is Cynteo Alert Bridge?
 
-Azure Alert Bridge is a fully managed integration that automatically creates, updates, and resolves SolarWinds Service Desk incidents based on your Azure Monitor alerts.
+Cynteo Alert Bridge is a fully managed integration that automatically creates, updates, and resolves SolarWinds Service Desk incidents based on your Azure Monitor alerts.
 
 ### Key Features
 
@@ -24,7 +24,7 @@ Azure Alert Bridge is a fully managed integration that automatically creates, up
 ```
 Azure Monitor Alert Fires
         ↓
-Azure Alert Bridge (Logic App)
+Cynteo Alert Bridge (Logic App)
         ↓
 SolarWinds Service Desk Incident Created
 ```
@@ -71,7 +71,7 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 ### Deploy from Azure Marketplace
 
-1. **Find Azure Alert Bridge** in Azure Marketplace
+1. **Find Cynteo Alert Bridge** in Azure Marketplace
 2. **Click "Get It Now"** and sign in
 3. **Fill in deployment form:**
    - Subscription: Your Azure subscription

@@ -1,8 +1,8 @@
 # GitHub Pages Configuration
-# Azure Alert Bridge Documentation Site
+# Cynteo Alert Bridge Documentation Site
 
 # Site settings
-title: Azure Alert Bridge Documentation
+title: Cynteo Alert Bridge Documentation
 description: Connect Azure Monitor alerts to SolarWinds Service Desk automatically
 baseurl: "" # Leave empty if using custom domain or org.github.io/repo-name
 url: "https://cynteocloud.github.io" # Update with your actual GitHub Pages URL

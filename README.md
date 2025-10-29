@@ -1,6 +1,6 @@
-# Azure Alert Bridge Documentation
+# Cynteo Alert Bridge Documentation
 
-Welcome to the Azure Alert Bridge documentation! This site provides everything you need to deploy, configure, and troubleshoot your Azure Monitor to SolarWinds Service Desk integration.
+Welcome to the Cynteo Alert Bridge documentation! This site provides everything you need to deploy, configure, and troubleshoot your Azure Monitor to SolarWinds Service Desk integration.
 
 ---
 
@@ -215,7 +215,7 @@ Most questions are answered in our docs:
 
 ## 📊 What's New
 
-### Version 1.2.1 (Latest)
+### Version 1.4.5 (Latest)
 
 **Fixed:**
 - ✅ Incident resolution now correctly updates SolarWinds state

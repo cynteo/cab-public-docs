@@ -1,6 +1,6 @@
 # Quick Start Guide
 
-Get Azure Alert Bridge running in 15 minutes.
+Get Cynteo Alert Bridge running in 15 minutes.
 
 ---
 
@@ -17,10 +17,10 @@ Before you begin, make sure you have:
 
 ## Step 1: Deploy from Azure Marketplace
 
-### 1.1 Find Azure Alert Bridge
+### 1.1 Find Cynteo Alert Bridge
 
 1. Go to [Azure Marketplace](https://azuremarketplace.microsoft.com)
-2. Search for **"Azure Alert Bridge for SolarWinds"**
+2. Search for **"Cynteo Alert Bridge for SolarWinds"**
 3. Click **"Get It Now"**
 4. Click **"Continue"** to go to Azure Portal
 

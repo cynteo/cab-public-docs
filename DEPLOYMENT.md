@@ -1,6 +1,6 @@
 # Deploying Documentation to GitHub Pages
 
-This guide explains how to publish the Azure Alert Bridge documentation to GitHub Pages.
+This guide explains how to publish the Cynteo Alert Bridge documentation to GitHub Pages.
 
 ---
 
@@ -19,7 +19,7 @@ This guide explains how to publish the Azure Alert Bridge documentation to GitHu
 1. Go to [GitHub](https://github.com)
 2. Click **"New repository"**
 3. **Repository name:** `azure-alert-bridge-docs` (or your choice)
-4. **Description:** `Azure Alert Bridge - Official Documentation`
+4. **Description:** `Cynteo Alert Bridge - Official Documentation`
 5. **Visibility:** Public
 6. ✅ Check **"Initialize with README"**
 7. Click **"Create repository"**
@@ -256,7 +256,7 @@ For more control, use a custom Jekyll theme:
 Edit `_config.yml`:
 
 ```yaml
-title: Azure Alert Bridge Documentation
+title: Cynteo Alert Bridge Documentation
 description: Connect Azure Monitor to SolarWinds automatically
 author: Cynteo Cloud
 

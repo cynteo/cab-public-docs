@@ -6,7 +6,7 @@ Configure Azure Monitor alerts to work with Alert Bridge.
 
 ## Overview
 
-Azure Alert Bridge integrates with Azure Monitor using **Action Groups** and **Common Alert Schema**. This guide shows you how to configure your alerts properly.
+Cynteo Alert Bridge integrates with Azure Monitor using **Action Groups** and **Common Alert Schema**. This guide shows you how to configure your alerts properly.
 
 ---
 
