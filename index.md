@@ -1,4 +1,4 @@
-# Cynteo Alert Bridge for SolarWinds Service DeskU
+# Cynteo Alert Bridge for SolarWinds Service Desk
 
 **Connect Azure Monitor alerts to your SolarWinds Service Desk automatically**
 
@@ -67,7 +67,7 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 - Azure subscription with Monitor alerts configured
 - SolarWinds Service Desk account
-- SolarWinds API token ([How to generate](./guides/solarwinds-api-token.md))
+- SolarWinds API token ([How to generate](./guides/solarwinds-api-token))
 
 ### Deploy from Azure Marketplace
 
@@ -79,7 +79,7 @@ All plans include a **30-day free trial**. No credit card required during trial.
    - SolarWinds API Token: Your API token
    - Email: For usage notifications
 4. **Click "Create"** and wait ~5 minutes
-5. **Configure Alert Action Group** ([Guide](./guides/configure-alert-action-group.md))
+5. **Configure Alert Action Group** ([Guide](./guides/configure-alert-action-group))
 
 **Done!** Your alerts will now create SolarWinds incidents automatically.
 
@@ -88,25 +88,25 @@ All plans include a **30-day free trial**. No credit card required during trial.
 ## 📚 Documentation
 
 ### Getting Started
-- [Quick Start Guide](./getting-started/quickstart.md)
-- [SolarWinds Setup](./getting-started/solarwinds-setup.md)
-- [Azure Monitor Configuration](./getting-started/azure-monitor-setup.md)
+- [Quick Start Guide](./getting-started/quickstart)
+- [SolarWinds Setup](./getting-started/solarwinds-setup)
+- [Azure Monitor Configuration](./getting-started/azure-monitor-setup)
 
 ### Configuration Guides
-- [Configure Alert Action Group](./guides/configure-alert-action-group.md)
-- [Priority Mapping](./guides/priority-mapping.md)
-- [Severity Filtering](./guides/severity-filtering.md)
-- [Custom Categories](./guides/custom-categories.md)
+- [Configure Alert Action Group](./guides/configure-alert-action-group)
+- [Priority Mapping](./guides/priority-mapping)
+- [Severity Filtering](./guides/severity-filtering)
+- [Custom Categories](./guides/custom-categories)
 
 ### Reference
-- [Incident Fields](./reference/incident-fields.md)
-- [Alert Schema](./reference/alert-schema.md)
-- [Environment Variables](./reference/environment-variables.md)
+- [Incident Fields](./reference/incident-fields)
+- [Alert Schema](./reference/alert-schema)
+- [Environment Variables](./reference/environment-variables)
 
 ### Troubleshooting
-- [Common Issues](./troubleshooting/common-issues.md)
-- [Deployment Errors](./troubleshooting/deployment-errors.md)
-- [Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets.md)
+- [Common Issues](./troubleshooting/common-issues)
+- [Deployment Errors](./troubleshooting/deployment-errors)
+- [Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets)
 
 ---
 
@@ -118,7 +118,7 @@ All plans include a **30-day free trial**. No credit card required during trial.
 - **Private Deployment** - Resources deployed to YOUR subscription
 - **SOC 2 Compliant** - Meets enterprise security standards
 
-[Read our Security Overview](./reference/security.md)
+[Read our Security Overview](./reference/security)
 
 ---
 
@@ -143,9 +143,9 @@ All plans include a **30-day free trial**. No credit card required during trial.
 ## 🔗 Links
 
 - [Azure Marketplace Listing](#)
-- [API Documentation](./reference/api.md)
-- [Changelog](./reference/changelog.md)
-- [Roadmap](./reference/roadmap.md)
+- [API Documentation](./reference/api)
+- [Changelog](./reference/changelog)
+- [Roadmap](./reference/roadmap)
 
 ---
 

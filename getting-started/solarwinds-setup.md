@@ -130,7 +130,7 @@ Your token must have:
 
 - Rotate API tokens every 90 days
 - Update token in Azure Key Vault when rotated
-- See [Update API Token Guide](../guides/update-api-token.md)
+- See [Update API Token Guide](../guides/update-api-token)
 
 ### 2. IP Restrictions (if available)
 
@@ -209,8 +209,8 @@ curl -X POST "https://api.samanage.com/incidents.json" \
 
 Now that SolarWinds is configured:
 
-1. **[Deploy Cynteo Alert Bridge](./quickstart.md)** from Azure Marketplace
-2. **[Configure Alert Action Groups](../guides/configure-alert-action-group.md)**
+1. **[Deploy Cynteo Alert Bridge](./quickstart)** from Azure Marketplace
+2. **[Configure Alert Action Groups](../guides/configure-alert-action-group)**
 3. **[Test the integration](./quickstart.md#step-4-test-it)**
 
 ---

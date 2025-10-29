@@ -311,10 +311,10 @@ google_analytics: UA-XXXXXXXXX-X
 **Fix relative links:**
 ```markdown
 # Bad
-[Quick Start](quickstart.md)
+[Quick Start](quickstart)
 
 # Good
-[Quick Start](./getting-started/quickstart.md)
+[Quick Start](./getting-started/quickstart)
 ```
 
 ---

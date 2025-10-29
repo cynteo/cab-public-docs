@@ -198,7 +198,7 @@ Priority mapping configured incorrectly during deployment.
    - `PRIORITY_SEV3`
 
 ### Fix
-See [Priority Mapping Guide](../guides/priority-mapping.md)
+See [Priority Mapping Guide](../guides/priority-mapping)
 
 ---
 
@@ -246,7 +246,7 @@ See [Priority Mapping Guide](../guides/priority-mapping.md)
 
 ### Fix
 - Upgrade plan if consistently over limit
-- Or implement [severity filtering](../guides/severity-filtering.md)
+- Or implement [severity filtering](../guides/severity-filtering)
 
 ---
 
@@ -262,7 +262,7 @@ See [Priority Mapping Guide](../guides/priority-mapping.md)
 **How to update:**
 
 1. **Generate new token in SolarWinds**
-   - See [SolarWinds Setup](../getting-started/solarwinds-setup.md)
+   - See [SolarWinds Setup](../getting-started/solarwinds-setup)
 
 2. **Update in Key Vault**
    - Go to Key Vault in Alert Bridge resource group
@@ -379,9 +379,9 @@ Please gather:
 
 ## Additional Resources
 
-- [Deployment Errors](./deployment-errors.md)
-- [Alert Not Creating Tickets](./alert-not-creating-tickets.md)
-- [Quick Start Guide](../getting-started/quickstart.md)
+- [Deployment Errors](./deployment-errors)
+- [Alert Not Creating Tickets](./alert-not-creating-tickets)
+- [Quick Start Guide](../getting-started/quickstart)
 - [Configuration Guides](../guides/)
 
 ---

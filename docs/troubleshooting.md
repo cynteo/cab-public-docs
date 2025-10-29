@@ -320,7 +320,7 @@ When contacting support, include:
 - Screenshots if applicable
 
 ### **Self-Service Resources**
-- [Quick Start Guide](quick-start.md)
+- [Quick Start Guide](quick-start)
 - [Platform Setup Guides](platforms/)
-- [API Reference](api-reference.md)
-- [Architecture Overview](architecture.md)
+- [API Reference](api-reference)
+- [Architecture Overview](architecture)

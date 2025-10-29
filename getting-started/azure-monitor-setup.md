@@ -14,7 +14,7 @@ Cynteo Alert Bridge integrates with Azure Monitor using **Action Groups** and **
 
 - Azure subscription with Monitor alerts configured
 - Contributor access to create/modify alert rules
-- Alert Bridge deployed ([Quick Start](./quickstart.md))
+- Alert Bridge deployed ([Quick Start](./quickstart))
 
 ---
 
@@ -291,7 +291,7 @@ This prevents multiple incidents for rapid-fire alerts.
 1. Action group uses **common alert schema** ✅
 2. Webhook URL is correct
 3. Logic App run history shows success
-4. [Troubleshooting Guide](../troubleshooting/alert-not-creating-tickets.md)
+4. [Troubleshooting Guide](../troubleshooting/alert-not-creating-tickets)
 
 ### Incident Missing Information
 
@@ -326,7 +326,7 @@ This prevents multiple incidents for rapid-fire alerts.
 Alert Bridge processes ALL alerts sent to it. To filter:
 
 1. Create separate action groups for different resource groups
-2. Or use [severity filtering](../guides/severity-filtering.md)
+2. Or use [severity filtering](../guides/severity-filtering)
 3. Or configure SolarWinds rules to auto-close certain incidents
 
 ### Custom Fields
@@ -337,14 +337,14 @@ Alert Bridge includes:
 - Metric values
 - Azure portal links
 
-For additional custom fields, see [Advanced Configuration](../guides/advanced-configuration.md).
+For additional custom fields, see [Advanced Configuration](../guides/advanced-configuration).
 
 ---
 
 ## Next Steps
 
-- **[Configure Priority Mapping](../guides/priority-mapping.md)**
-- **[Set Up Severity Filtering](../guides/severity-filtering.md)**
+- **[Configure Priority Mapping](../guides/priority-mapping)**
+- **[Set Up Severity Filtering](../guides/severity-filtering)**
 - **[Test Your Integration](./quickstart.md#step-4-test-it)**
 
 ---

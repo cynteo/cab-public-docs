@@ -115,9 +115,9 @@ Get up and running with Cynteo Alert Bridge in under 10 minutes.
 ## Next Steps
 
 - [Platform-Specific Setup](platforms/)
-- [Troubleshooting Guide](troubleshooting.md)
-- [API Reference](api-reference.md)
-- [Architecture Overview](architecture.md)
+- [Troubleshooting Guide](troubleshooting)
+- [API Reference](api-reference)
+- [Architecture Overview](architecture)
 
 ## Support
 

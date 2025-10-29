@@ -132,7 +132,7 @@ For each alert you want sent to SolarWinds:
    - **Priority:** Based on severity mapping
    - **Description:** Rich HTML with alert details
 
-**If you don't see it:** Check [Troubleshooting Guide](../troubleshooting/alert-not-creating-tickets.md)
+**If you don't see it:** Check [Troubleshooting Guide](../troubleshooting/alert-not-creating-tickets)
 
 ---
 
@@ -164,10 +164,10 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 
 ### Customize Your Integration
 
-- **[Priority Mapping](../guides/priority-mapping.md)** - Adjust severity-to-priority mapping
-- **[Severity Filtering](../guides/severity-filtering.md)** - Ignore specific alert severities
-- **[Custom Categories](../guides/custom-categories.md)** - Use your SolarWinds categories
-- **[Comment Deduplication](../guides/comment-deduplication.md)** - Control update frequency
+- **[Priority Mapping](../guides/priority-mapping)** - Adjust severity-to-priority mapping
+- **[Severity Filtering](../guides/severity-filtering)** - Ignore specific alert severities
+- **[Custom Categories](../guides/custom-categories)** - Use your SolarWinds categories
+- **[Comment Deduplication](../guides/comment-deduplication)** - Control update frequency
 
 ### Monitor Usage
 
@@ -178,7 +178,7 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 ### Get Support
 
 - **Documentation:** [All Guides](../guides/)
-- **Troubleshooting:** [Common Issues](../troubleshooting/common-issues.md)
+- **Troubleshooting:** [Common Issues](../troubleshooting/common-issues)
 - **Email:** support@cynteocloud.com
 
 ---
@@ -202,5 +202,5 @@ A: Full functionality, up to your plan's alert limit, for 30 days. No credit car
 
 ---
 
-**Need help?** Check our [troubleshooting guide](../troubleshooting/common-issues.md) or [contact support](mailto:support@cynteocloud.com).
+**Need help?** Check our [troubleshooting guide](../troubleshooting/common-issues) or [contact support](mailto:support@cynteocloud.com).
 

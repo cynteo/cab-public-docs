@@ -198,7 +198,7 @@ For technical support or questions about SolarWinds integration:
 
 ## Related Documentation
 
-- [Quick Start Guide](../quick-start.md)
-- [Troubleshooting Guide](../troubleshooting.md)
-- [API Reference](../api-reference.md)
-- [Architecture Overview](../architecture.md)
+- [Quick Start Guide](../quick-start)
+- [Troubleshooting Guide](../troubleshooting)
+- [API Reference](../api-reference)
+- [Architecture Overview](../architecture)

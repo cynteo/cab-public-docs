@@ -6,8 +6,8 @@ Welcome to the Cynteo Alert Bridge documentation! This site provides everything 
 
 ## 🚀 Quick Links
 
-- **[Get Started](./getting-started/quickstart.md)** - Deploy in 15 minutes
-- **[Troubleshooting](./troubleshooting/common-issues.md)** - Fix common issues
+- **[Get Started](./getting-started/quickstart)** - Deploy in 15 minutes
+- **[Troubleshooting](./troubleshooting/common-issues)** - Fix common issues
 - **[All Guides](./guides/)** - Configuration and customization
 
 ---
@@ -17,32 +17,32 @@ Welcome to the Cynteo Alert Bridge documentation! This site provides everything 
 ### Getting Started
 New to Alert Bridge? Start here!
 
-- **[Quick Start Guide](./getting-started/quickstart.md)** - Complete deployment walkthrough
-- **[SolarWinds Setup](./getting-started/solarwinds-setup.md)** - Generate API token and configure SolarWinds
-- **[Azure Monitor Setup](./getting-started/azure-monitor-setup.md)** - Configure alerts and action groups
+- **[Quick Start Guide](./getting-started/quickstart)** - Complete deployment walkthrough
+- **[SolarWinds Setup](./getting-started/solarwinds-setup)** - Generate API token and configure SolarWinds
+- **[Azure Monitor Setup](./getting-started/azure-monitor-setup)** - Configure alerts and action groups
 
 ### Configuration Guides
 Customize your integration.
 
-- **[Configure Alert Action Group](./guides/configure-alert-action-group.md)** - Set up Azure Monitor action groups
-- **[Priority Mapping](./guides/priority-mapping.md)** - Map severity to priority
-- **[Severity Filtering](./guides/severity-filtering.md)** - Ignore specific alert levels
-- **[Custom Categories](./guides/custom-categories.md)** - Use your SolarWinds categories
+- **[Configure Alert Action Group](./guides/configure-alert-action-group)** - Set up Azure Monitor action groups
+- **[Priority Mapping](./guides/priority-mapping)** - Map severity to priority
+- **[Severity Filtering](./guides/severity-filtering)** - Ignore specific alert levels
+- **[Custom Categories](./guides/custom-categories)** - Use your SolarWinds categories
 
 ### Reference
 Technical details and specifications.
 
-- **[Incident Fields](./reference/incident-fields.md)** - What data gets sent to SolarWinds
-- **[Alert Schema](./reference/alert-schema.md)** - Common Alert Schema explained
-- **[Environment Variables](./reference/environment-variables.md)** - Configuration options
-- **[Security](./reference/security.md)** - Security architecture and compliance
+- **[Incident Fields](./reference/incident-fields)** - What data gets sent to SolarWinds
+- **[Alert Schema](./reference/alert-schema)** - Common Alert Schema explained
+- **[Environment Variables](./reference/environment-variables)** - Configuration options
+- **[Security](./reference/security)** - Security architecture and compliance
 
 ### Troubleshooting
 Solve problems quickly.
 
-- **[Common Issues](./troubleshooting/common-issues.md)** - Most frequent problems and solutions
-- **[Deployment Errors](./troubleshooting/deployment-errors.md)** - Fix deployment failures
-- **[Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets.md)** - Debug incident creation
+- **[Common Issues](./troubleshooting/common-issues)** - Most frequent problems and solutions
+- **[Deployment Errors](./troubleshooting/deployment-errors)** - Fix deployment failures
+- **[Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets)** - Debug incident creation
 
 ---
 
@@ -51,19 +51,19 @@ Solve problems quickly.
 ### I want to...
 
 **Deploy Alert Bridge**  
-→ [Quick Start Guide](./getting-started/quickstart.md)
+→ [Quick Start Guide](./getting-started/quickstart)
 
 **Get my SolarWinds API token**  
 → [SolarWinds Setup](./getting-started/solarwinds-setup.md#generating-api-token)
 
 **Connect my alerts to SolarWinds**  
-→ [Configure Action Group](./guides/configure-alert-action-group.md)
+→ [Configure Action Group](./guides/configure-alert-action-group)
 
 **Change priority mapping**  
-→ [Priority Mapping Guide](./guides/priority-mapping.md)
+→ [Priority Mapping Guide](./guides/priority-mapping)
 
 **Ignore low-severity alerts**  
-→ [Severity Filtering](./guides/severity-filtering.md)
+→ [Severity Filtering](./guides/severity-filtering)
 
 **Test my integration**  
 → [Quick Start - Step 4](./getting-started/quickstart.md#step-4-test-it)
@@ -184,7 +184,7 @@ Alert Bridge is designed with security in mind:
 - ✅ **Audit Logs** - Full trace of all operations
 - ✅ **SOC 2 Compliant** - Enterprise-ready
 
-[Read Security Details](./reference/security.md)
+[Read Security Details](./reference/security)
 
 ---
 
@@ -207,7 +207,7 @@ Most questions are answered in our docs:
 - Enterprise: < 4 hours
 
 **Before contacting:**
-1. Check [Common Issues](./troubleshooting/common-issues.md)
+1. Check [Common Issues](./troubleshooting/common-issues)
 2. Gather error messages and screenshots
 3. Note what you've already tried
 
@@ -227,7 +227,7 @@ Most questions are answered in our docs:
 - ✅ Configurable comment interval
 - ✅ Enhanced alert context in incidents
 
-[Full Changelog](./reference/changelog.md)
+[Full Changelog](./reference/changelog)
 
 ---
 
@@ -241,7 +241,7 @@ Most questions are answered in our docs:
 - Alert aggregation (multiple alerts → one ticket)
 - SLA tracking integration
 
-[View Full Roadmap](./reference/roadmap.md)
+[View Full Roadmap](./reference/roadmap)
 
 ---
 
@@ -256,16 +256,16 @@ Most questions are answered in our docs:
 
 ## 📄 Legal
 
-- [Terms of Service](./legal/terms-of-service.md)
-- [Privacy Policy](./legal/privacy-policy.md)
-- [SLA](./legal/sla.md)
-- [Data Processing Agreement](./legal/dpa.md)
+- [Terms of Service](./legal/terms-of-service)
+- [Privacy Policy](./legal/privacy-policy)
+- [SLA](./legal/sla)
+- [Data Processing Agreement](./legal/dpa)
 
 ---
 
 **Ready to get started?**
 
-**[→ Quick Start Guide](./getting-started/quickstart.md)**
+**[→ Quick Start Guide](./getting-started/quickstart)**
 
 ---
 

@@ -172,7 +172,7 @@ Create `README.md` with:
 
 #### 7. Partner Center Offer (4-6 hours)
 
-Create marketplace offer following [docs/partner-center/PARTNER_CENTER_SETUP_GUIDE.md](docs/partner-center/PARTNER_CENTER_SETUP_GUIDE.md)
+Create marketplace offer following [docs/partner-center/PARTNER_CENTER_SETUP_GUIDE.md](docs/partner-center/PARTNER_CENTER_SETUP_GUIDE)
 
 ### Platform Integration Checklist
 
