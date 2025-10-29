@@ -8,9 +8,9 @@ baseurl: "" # Leave empty if using custom domain or org.github.io/repo-name
 url: "https://cynteocloud.github.io" # Update with your actual GitHub Pages URL
 
 # Theme
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minimal
 # Alternative themes:
-# - jekyll-theme-minimal
+# - jekyll-theme-cayman
 # - jekyll-theme-slate
 # - jekyll-theme-modernist
 
