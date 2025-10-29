@@ -1,3 +1,8 @@
+---
+title: "Cynteo Alert Bridge for SolarWinds Service Desk"
+description: "Connect Azure Monitor alerts to your SolarWinds Service Desk automatically"
+---
+
 # Cynteo Alert Bridge for SolarWinds Service Desk
 
 **Connect Azure Monitor alerts to your SolarWinds Service Desk automatically**
