@@ -8,14 +8,15 @@ baseurl: "" # Leave empty if using custom domain or org.github.io/repo-name
 url: "https://cynteocloud.github.io" # Update with your actual GitHub Pages URL
 
 # Theme
-theme: jekyll-theme-minimal
+remote_theme: pages-themes/minimal@v0.2.0
 # Alternative themes:
-# - jekyll-theme-cayman
-# - jekyll-theme-slate
-# - jekyll-theme-modernist
+# - pages-themes/cayman@v0.2.0
+# - pages-themes/slate@v0.2.0
+# - pages-themes/modernist@v0.2.0
 
 # Plugins
 plugins:
+  - jekyll-remote-theme
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
