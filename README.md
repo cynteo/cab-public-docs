@@ -24,6 +24,12 @@ Visit **[https://cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)** f
 
 ---
 
+## 🎨 Theme
+
+This site uses the [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke) Hugo theme.
+
+---
+
 ## 📝 Documentation Updates
 
 This documentation is maintained by the Cynteo team. If you find errors or have suggestions:

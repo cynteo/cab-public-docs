@@ -1,14 +1,18 @@
 baseURL = 'https://cab-docs.cynteocloud.com/'
 languageCode = 'en-us'
 title = 'Cynteo Alert Bridge Documentation'
-
-# Using a simple built-in theme approach
-# You can add a theme later by running: git submodule add <theme-repo> themes/<theme-name>
+theme = 'ananke'
 
 [params]
   description = 'Connect Azure Monitor alerts to SolarWinds Service Desk automatically'
   author = 'Cynteo Cloud'
-  repo = 'https://github.com/cynteocloud/cab-public-docs'
+  text_color = 'dark-gray'
+  background_color_class = 'bg-near-white'
+  featured_image = ''
+  recent_posts_number = 5
+  favicon = ''
+  site_logo = ''
+  github = 'https://github.com/cynteocloud/cab-public-docs'
   
 [menu]
   [[menu.main]]
