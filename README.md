@@ -18,9 +18,28 @@ Visit **[https://cab-docs.cynteocloud.com](https://cab-docs.cynteocloud.com)** f
 ## 🚀 Quick Links
 
 - **[Get Started](https://cab-docs.cynteocloud.com/getting-started/quickstart)** - Deployment guide
+- **[Platforms](https://cab-docs.cynteocloud.com/platforms/)** - Platform-specific setup
 - **[Features](https://cab-docs.cynteocloud.com#-key-features)** - What Alert Bridge can do
 - **[Troubleshooting](https://cab-docs.cynteocloud.com/troubleshooting/common-issues)** - Common issues
 - **[Support](mailto:support@cynteocloud.com)** - Get help
+
+---
+
+## 🎨 Adding Favicon
+
+To add your Cynteo favicon/logo:
+
+1. Place your favicon files in the appropriate directories:
+   - `static/favicon.ico` - Classic .ico file (16x16, 32x32)
+   - `static/images/favicon-16x16.png` - 16x16 PNG
+   - `static/images/favicon-32x32.png` - 32x32 PNG
+   - `static/images/apple-touch-icon.png` - 180x180 PNG for iOS
+
+2. Generate favicons easily using [favicon.io](https://favicon.io/favicon-generator/)
+
+3. See `static/images/README-FAVICON.md` for detailed instructions
+
+The HTML configuration is already set up and will automatically use these files once added.
 
 ---
 

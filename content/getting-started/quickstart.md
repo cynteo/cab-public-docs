@@ -6,7 +6,7 @@ weight: 1
 
 # Quick Start Guide
 
-Get Cynteo Alert Bridge running in 15 minutes.
+Deploy Cynteo Alert Bridge to your Azure environment in minutes.
 
 ---
 
@@ -15,8 +15,10 @@ Get Cynteo Alert Bridge running in 15 minutes.
 Before you begin, make sure you have:
 
 - [ ] Azure subscription (with Owner or Contributor role)
-- [ ] SolarWinds Service Desk account
-- [ ] SolarWinds API token ([Generate here](./solarwinds-setup.md#generating-api-token))
+- [ ] ITSM platform account (SolarWinds, ServiceNow, etc.)
+- [ ] API credentials for your platform
+  - [SolarWinds: Generate API Token](../platforms/solarwinds/api-token)
+  - Other platforms: See [Platform Guides](../platforms/)
 - [ ] At least one Azure Monitor alert configured
 
 ---

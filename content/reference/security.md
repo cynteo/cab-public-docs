@@ -162,7 +162,7 @@ Contact [sales@cynteocloud.com](mailto:sales@cynteocloud.com) for access.
 
 - [Incident Fields](./incident-fields) - What data is sent
 - [Environment Variables](./environment-variables) - Configuration options
-- [SolarWinds Setup](../getting-started/solarwinds-setup) - API token permissions
+- [SolarWinds Setup](../platforms/solarwinds/setup) - API token permissions
 
 ---
 

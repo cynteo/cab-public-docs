@@ -268,7 +268,7 @@ See [Priority Mapping Guide](../guides/priority-mapping)
 **How to update:**
 
 1. **Generate new token in SolarWinds**
-   - See [SolarWinds Setup](../getting-started/solarwinds-setup)
+   - See [SolarWinds Setup](../platforms/solarwinds/setup)
 
 2. **Update in Key Vault**
    - Go to Key Vault in Alert Bridge resource group

@@ -322,7 +322,7 @@ Alert Bridge automatically respects these limits with request queuing.
 
 ## See Also
 
-- [SolarWinds Setup](../getting-started/solarwinds-setup) - Complete setup guide
+- [SolarWinds Setup](./setup) - Complete setup guide
 - [Security Overview](../reference/security) - Security best practices
 - [Environment Variables](../reference/environment-variables) - Configuration options
 

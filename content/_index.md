@@ -53,16 +53,17 @@ When an alert fires:
 
 ## 💰 Pricing
 
-All plans include a **30-day free trial**. No credit card required during trial.
+| Plan | Alerts/Month | Price/Month | Duration |
+|------|-------------|-------------|----------|
+| **Trial** | Up to 1,000 | Free | 30 days |
+| **Basic** | Up to 1,000 | $49 | Monthly |
+| **Professional** | Up to 5,000 | $149 | Monthly |
+| **Business** | Up to 20,000 | $399 | Monthly |
+| **Enterprise** | Unlimited | Contact Us | Custom |
 
-| Plan | Alerts/Month | Price/Month |
-|------|-------------|-------------|
-| **Starter** | Up to 1,000 | $49 |
-| **Professional** | Up to 5,000 | $149 |
-| **Business** | Up to 20,000 | $399 |
-| **Enterprise** | Unlimited | Contact Us |
+**Trial Plan:** Experience all features free for 30 days. No credit card required. Automatically converts to a paid plan or expires after trial period.
 
-**Soft Limits:** Plans use soft limits. You'll receive notifications at 80% and 100% usage. No service interruption.
+**Soft Limits:** Paid plans use soft limits. You'll receive notifications at 80% and 100% usage. No service interruption.
 
 ---
 
@@ -72,8 +73,10 @@ All plans include a **30-day free trial**. No credit card required during trial.
 
 Before deployment, ensure you have:
 - Azure subscription with appropriate permissions
-- SolarWinds Service Desk account
-- SolarWinds API token ([How to generate](./guides/solarwinds-api-token))
+- ITSM platform account (SolarWinds Service Desk, ServiceNow, etc.)
+- API credentials for your platform
+  - [SolarWinds Setup Instructions](./platforms/solarwinds/setup)
+  - [Other Platforms](./platforms/) (coming soon)
 
 ### Deployment Process
 
@@ -81,15 +84,15 @@ Before deployment, ensure you have:
 2. **Start deployment** and provide required information
 3. **Configure settings:**
    - Azure subscription and resource group
-   - SolarWinds API credentials
+   - ITSM platform API credentials
    - Incident preferences (category, priority mapping)
    - Contact email for notifications
 4. **Deploy** (~5-10 minutes)
 5. **Connect Azure Alerts** via Action Groups
 
-**That's it!** Azure alerts will now automatically create and manage SolarWinds incidents.
+**That's it!** Azure alerts will now automatically create and manage incidents in your ITSM platform.
 
-For detailed deployment instructions, see the [Quick Start Guide](./getting-started/quickstart).
+For detailed deployment instructions, see the [Quick Start Guide](./getting-started/quickstart) and platform-specific setup guides.
 
 ---
 
@@ -97,14 +100,19 @@ For detailed deployment instructions, see the [Quick Start Guide](./getting-star
 
 ### Getting Started
 - [Quick Start Guide](./getting-started/quickstart)
-- [SolarWinds Setup](./getting-started/solarwinds-setup)
 - [Azure Monitor Configuration](./getting-started/azure-monitor-setup)
+
+### Platform Setup
+- [SolarWinds Service Desk](./platforms/solarwinds/)
+- ServiceNow (coming soon)
+- Jira Service Management (coming soon)
 
 ### Configuration Guides
 - [Configure Alert Action Group](./guides/configure-alert-action-group)
 - [Priority Mapping](./guides/priority-mapping)
 - [Severity Filtering](./guides/severity-filtering)
 - [Custom Categories](./guides/custom-categories)
+- [SolarWinds Categories](./platforms/solarwinds/categories)
 
 ### Reference
 - [Incident Fields](./reference/incident-fields)

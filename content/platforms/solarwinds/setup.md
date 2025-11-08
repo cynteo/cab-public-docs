@@ -1,12 +1,12 @@
 ---
-title: "SolarWinds Service Desk Setup"
+title: "Initial Setup"
 description: "Configure SolarWinds for Cynteo Alert Bridge integration"
-weight: 2
+weight: 1
 ---
 
-# SolarWinds Service Desk Setup
+# SolarWinds Service Desk Initial Setup
 
-Configure SolarWinds for Cynteo Alert Bridge integration.
+Complete setup guide for configuring SolarWinds Service Desk with Cynteo Alert Bridge.
 
 ---
 
@@ -215,7 +215,7 @@ curl -X POST "https://api.samanage.com/incidents.json" \
 
 Now that SolarWinds is configured:
 
-1. **[Deploy Cynteo Alert Bridge](./quickstart)** from Azure Marketplace
+1. **[Deploy Cynteo Alert Bridge](../../getting-started/quickstart)** from Azure Marketplace
 2. **[Configure Alert Action Groups](../guides/configure-alert-action-group)**
 3. **[Test the integration](./quickstart.md#step-4-test-it)**
 

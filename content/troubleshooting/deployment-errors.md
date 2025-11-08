@@ -425,7 +425,7 @@ az deployment group show \
 
 - [Quick Start Guide](../getting-started/quickstart) - Step-by-step deployment
 - [Common Issues](./common-issues) - Runtime troubleshooting
-- [SolarWinds Setup](../getting-started/solarwinds-setup) - API token generation
+- [SolarWinds Setup](../platforms/solarwinds/setup) - API token generation
 
 ---
 

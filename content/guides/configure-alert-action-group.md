@@ -218,7 +218,7 @@ This prevents duplicate alerts within 5 minutes.
 **2. Check SolarWinds API Token**
 1. Verify token is valid
 2. Check token has create incident permission
-3. See [SolarWinds Setup](../getting-started/solarwinds-setup)
+3. See [SolarWinds Setup](../platforms/solarwinds/setup)
 
 **3. Check Logic App Configuration**
 1. Ensure API token stored in Key Vault
