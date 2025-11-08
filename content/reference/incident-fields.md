@@ -157,7 +157,7 @@ Default mapping (configurable):
 | Sev2 | Medium | Performance degradation |
 | Sev3 | Low | Informational, capacity planning |
 
-**Customize:** See [Priority Mapping Guide](../guides/priority-mapping)
+**Customize:** See [Priority Mapping Guide](/guides/priority-mapping)
 
 ---
 
@@ -343,7 +343,7 @@ Future versions will support:
 - Custom descriptions
 - Field mapping rules
 
-[View Roadmap](./roadmap)
+[View Roadmap](/reference/roadmap)
 
 ---
 
@@ -377,9 +377,9 @@ What Alert Bridge sends to SolarWinds API:
 
 ## See Also
 
-- [Alert Schema](./alert-schema) - Input from Azure Monitor
-- [Environment Variables](./environment-variables) - Configuration options
-- [Priority Mapping](../guides/priority-mapping) - Customize mapping
+- [Alert Schema](/reference/alert-schema) - Input from Azure Monitor
+- [Environment Variables](/reference/environment-variables) - Configuration options
+- [Priority Mapping](/guides/priority-mapping) - Customize mapping
 - [SolarWinds API](https://help.samanage.com/s/article/Incidents-API) - Official docs
 
 ---

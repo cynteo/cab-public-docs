@@ -34,19 +34,19 @@ Ensure your SolarWinds instance is ready:
 
 Follow our detailed guide to generate your API token:
 
-[Generate SolarWinds API Token →](./api-token)
+[Generate SolarWinds API Token →](/platforms/solarwinds/api-token)
 
 ### Step 3: Configure Categories
 
 Set up categories for organized incident tracking:
 
-[Configure Categories →](./categories)
+[Configure Categories →](/platforms/solarwinds/categories)
 
 ### Step 4: Deploy Alert Bridge
 
 With your API token ready, deploy Alert Bridge from Azure Marketplace.
 
-[Deployment Guide →](../../getting-started/quickstart)
+[Deployment Guide →](/getting-started/quickstart)
 
 ---
 
@@ -101,14 +101,14 @@ You can specify custom categories during deployment.
 ## Documentation
 
 ### Setup Guides
-- [Initial Setup](./setup) - Complete SolarWinds configuration
-- [API Token Management](./api-token) - Generate and rotate tokens
-- [Categories & Priorities](./categories) - Configure incident organization
+- [Initial Setup](/platforms/solarwinds/setup) - Complete SolarWinds configuration
+- [API Token Management](/platforms/solarwinds/api-token) - Generate and rotate tokens
+- [Categories & Priorities](/platforms/solarwinds/categories) - Configure incident organization
 
 ### Troubleshooting
-- [Common Issues](../../troubleshooting/common-issues) - SolarWinds-specific problems
-- [API Errors](./troubleshooting) - SolarWinds API error codes
-- [Authentication Issues](./troubleshooting#authentication) - Token problems
+- [Common Issues](/troubleshooting/common-issues) - SolarWinds-specific problems
+- [API Errors](/platforms/solarwinds/troubleshooting) - SolarWinds API error codes
+- [Authentication Issues](/platforms/solarwinds/troubleshooting#authentication) - Token problems
 
 ---
 
@@ -148,5 +148,5 @@ Alert Bridge automatically queues requests to stay within limits.
 
 ---
 
-**Ready to get started?** [Set up SolarWinds →](./setup)
+**Ready to get started?** [Set up SolarWinds →](/platforms/solarwinds/setup)
 

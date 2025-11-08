@@ -164,9 +164,9 @@ Adjust based on your operational needs and SLA requirements.
 
 ## See Also
 
-- [SolarWinds Setup](./setup) - Initial configuration
-- [API Token Guide](./api-token) - Token management
-- [Priority Mapping Guide](../../guides/priority-mapping) - Advanced mapping options
+- [SolarWinds Setup](/platforms/solarwinds/setup) - Initial configuration
+- [API Token Guide](/platforms/solarwinds/api-token) - Token management
+- [Priority Mapping Guide](/guides/priority-mapping) - Advanced mapping options
 
 ---
 

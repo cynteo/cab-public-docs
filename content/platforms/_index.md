@@ -16,11 +16,11 @@ Cynteo Alert Bridge integrates with leading ITSM platforms. Select your platform
 
 Fully supported with comprehensive documentation.
 
-- [Setup Guide](./solarwinds/setup) - Configure SolarWinds for Alert Bridge
-- [API Token Guide](./solarwinds/api-token) - Generate and manage API tokens
-- [Categories & Priorities](./solarwinds/categories) - Configure incident categorization
+- [Setup Guide](/platforms/solarwinds/setup) - Configure SolarWinds for Alert Bridge
+- [API Token Guide](/platforms/solarwinds/api-token) - Generate and manage API tokens
+- [Categories & Priorities](/platforms/solarwinds/categories) - Configure incident categorization
 
-[Get Started with SolarWinds →](./solarwinds/)
+[Get Started with SolarWinds →](/platforms/solarwinds/)
 
 ---
 
@@ -36,7 +36,7 @@ Features:
 - Custom field mapping
 - CMDB integration
 
-[View Roadmap](../reference/roadmap)
+[View Roadmap](/reference/roadmap)
 
 ### 🔜 Jira Service Management
 
@@ -48,7 +48,7 @@ Features:
 - Project-based routing
 - Labels and components
 
-[View Roadmap](../reference/roadmap)
+[View Roadmap](/reference/roadmap)
 
 ---
 

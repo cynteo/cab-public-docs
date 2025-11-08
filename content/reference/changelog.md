@@ -90,7 +90,7 @@ All notable changes to Cynteo Alert Bridge.
 
 ## Upcoming Features
 
-See our [Roadmap](./roadmap) for planned features.
+See our [Roadmap](/reference/roadmap) for planned features.
 
 ---
 

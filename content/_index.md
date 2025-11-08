@@ -75,8 +75,8 @@ Before deployment, ensure you have:
 - Azure subscription with appropriate permissions
 - ITSM platform account (SolarWinds Service Desk, ServiceNow, etc.)
 - API credentials for your platform
-  - [SolarWinds Setup Instructions](./platforms/solarwinds/setup)
-  - [Other Platforms](./platforms/) (coming soon)
+  - [SolarWinds Setup Instructions](/platforms/solarwinds/setup)
+  - [Other Platforms](/platforms/) (coming soon)
 
 ### Deployment Process
 
@@ -92,37 +92,37 @@ Before deployment, ensure you have:
 
 **That's it!** Azure alerts will now automatically create and manage incidents in your ITSM platform.
 
-For detailed deployment instructions, see the [Quick Start Guide](./getting-started/quickstart) and platform-specific setup guides.
+For detailed deployment instructions, see the [Quick Start Guide](/getting-started/quickstart) and platform-specific setup guides.
 
 ---
 
 ## 📚 Documentation
 
 ### Getting Started
-- [Quick Start Guide](./getting-started/quickstart)
-- [Azure Monitor Configuration](./getting-started/azure-monitor-setup)
+- [Quick Start Guide](/getting-started/quickstart)
+- [Azure Monitor Configuration](/getting-started/azure-monitor-setup)
 
 ### Platform Setup
-- [SolarWinds Service Desk](./platforms/solarwinds/)
+- [SolarWinds Service Desk](/platforms/solarwinds/)
 - ServiceNow (coming soon)
 - Jira Service Management (coming soon)
 
 ### Configuration Guides
-- [Configure Alert Action Group](./guides/configure-alert-action-group)
-- [Priority Mapping](./guides/priority-mapping)
-- [Severity Filtering](./guides/severity-filtering)
-- [Custom Categories](./guides/custom-categories)
-- [SolarWinds Categories](./platforms/solarwinds/categories)
+- [Configure Alert Action Group](/guides/configure-alert-action-group)
+- [Priority Mapping](/guides/priority-mapping)
+- [Severity Filtering](/guides/severity-filtering)
+- [Custom Categories](/guides/custom-categories)
+- [SolarWinds Categories](/platforms/solarwinds/categories)
 
 ### Reference
-- [Incident Fields](./reference/incident-fields)
-- [Alert Schema](./reference/alert-schema)
-- [Environment Variables](./reference/environment-variables)
+- [Incident Fields](/reference/incident-fields)
+- [Alert Schema](/reference/alert-schema)
+- [Environment Variables](/reference/environment-variables)
 
 ### Troubleshooting
-- [Common Issues](./troubleshooting/common-issues)
-- [Deployment Errors](./troubleshooting/deployment-errors)
-- [Alert Not Creating Tickets](./troubleshooting/alert-not-creating-tickets)
+- [Common Issues](/troubleshooting/common-issues)
+- [Deployment Errors](/troubleshooting/deployment-errors)
+- [Alert Not Creating Tickets](/troubleshooting/alert-not-creating-tickets)
 
 ---
 
@@ -134,7 +134,7 @@ For detailed deployment instructions, see the [Quick Start Guide](./getting-star
 - **Private Deployment** - Resources deployed to YOUR subscription
 - **SOC 2 Compliant** - Meets enterprise security standards
 
-[Read our Security Overview](./reference/security)
+[Read our Security Overview](/reference/security)
 
 ---
 
@@ -149,9 +149,9 @@ For detailed deployment instructions, see the [Quick Start Guide](./getting-star
 ## 🔗 Links
 
 - [Azure Marketplace Listing](#)
-- [API Documentation](./reference/api)
-- [Changelog](./reference/changelog)
-- [Roadmap](./reference/roadmap)
+- [API Documentation](/reference/api)
+- [Changelog](/reference/changelog)
+- [Roadmap](/reference/roadmap)
 
 ---
 

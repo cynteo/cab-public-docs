@@ -142,9 +142,9 @@ For questions about your specific configuration or to request changes, contact [
 
 ## See Also
 
-- [Priority Mapping](../guides/priority-mapping) - How severities map to priorities
-- [Severity Filtering](../guides/severity-filtering) - Alert filtering options
-- [Custom Categories](../guides/custom-categories) - SolarWinds categories
+- [Priority Mapping](/guides/priority-mapping) - How severities map to priorities
+- [Severity Filtering](/guides/severity-filtering) - Alert filtering options
+- [Custom Categories](/guides/custom-categories) - SolarWinds categories
 
 ---
 

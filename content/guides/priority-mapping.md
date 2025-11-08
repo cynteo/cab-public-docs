@@ -114,9 +114,9 @@ Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to discuss cus
 
 ## See Also
 
-- [Configuration Options](../reference/environment-variables) - Available settings
-- [Severity Filtering](./severity-filtering) - Filter by severity
-- [Custom Categories](./custom-categories) - SolarWinds categories
+- [Configuration Options](/reference/environment-variables) - Available settings
+- [Severity Filtering](/guides/severity-filtering) - Filter by severity
+- [Custom Categories](/guides/custom-categories) - SolarWinds categories
 
 ---
 

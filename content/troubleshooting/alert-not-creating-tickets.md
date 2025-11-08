@@ -450,9 +450,9 @@ Before contacting support:
 
 ## See Also
 
-- [Common Issues](./common-issues) - Other troubleshooting topics
-- [Configure Action Groups](../guides/configure-alert-action-group) - Setup guide
-- [API Documentation](../reference/api) - Technical reference
+- [Common Issues](/troubleshooting/common-issues) - Other troubleshooting topics
+- [Configure Action Groups](/guides/configure-alert-action-group) - Setup guide
+- [API Documentation](/reference/api) - Technical reference
 
 ---
 

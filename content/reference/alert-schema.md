@@ -218,8 +218,8 @@ Invoke-RestMethod -Uri $uri -Method Post -Body $body -ContentType "application/j
 
 ## See Also
 
-- [Incident Fields](./incident-fields) - Output format
-- [Configure Action Groups](../guides/configure-alert-action-group) - Setup guide
+- [Incident Fields](/reference/incident-fields) - Output format
+- [Configure Action Groups](/guides/configure-alert-action-group) - Setup guide
 - [Azure Monitor Documentation](https://docs.microsoft.com/azure/azure-monitor/alerts/alerts-common-schema)
 
 ---

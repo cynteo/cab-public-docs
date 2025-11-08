@@ -136,9 +136,9 @@ To configure or adjust severity filtering for your deployment, contact [support@
 
 ## See Also
 
-- [Priority Mapping](./priority-mapping) - Map severities to priorities
-- [Configuration Options](../reference/environment-variables) - Available settings
-- [Azure Monitor Setup](../getting-started/azure-monitor-setup) - Alert configuration
+- [Priority Mapping](/guides/priority-mapping) - Map severities to priorities
+- [Configuration Options](/reference/environment-variables) - Available settings
+- [Azure Monitor Setup](/getting-started/azure-monitor-setup) - Alert configuration
 
 ---
 

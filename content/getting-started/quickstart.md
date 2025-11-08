@@ -17,8 +17,8 @@ Before you begin, make sure you have:
 - [ ] Azure subscription (with Owner or Contributor role)
 - [ ] ITSM platform account (SolarWinds, ServiceNow, etc.)
 - [ ] API credentials for your platform
-  - [SolarWinds: Generate API Token](../platforms/solarwinds/api-token)
-  - Other platforms: See [Platform Guides](../platforms/)
+  - [SolarWinds: Generate API Token](/platforms/solarwinds/api-token)
+  - Other platforms: See [Platform Guides](/platforms/)
 - [ ] At least one Azure Monitor alert configured
 
 ---
@@ -140,7 +140,7 @@ For each alert you want sent to SolarWinds:
    - **Priority:** Based on severity mapping
    - **Description:** Rich HTML with alert details
 
-**If you don't see it:** Check [Troubleshooting Guide](../troubleshooting/alert-not-creating-tickets)
+**If you don't see it:** Check [Troubleshooting Guide](/troubleshooting/alert-not-creating-tickets)
 
 ---
 
@@ -172,10 +172,9 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 
 ### Customize Your Integration
 
-- **[Priority Mapping](../guides/priority-mapping)** - Adjust severity-to-priority mapping
-- **[Severity Filtering](../guides/severity-filtering)** - Ignore specific alert severities
-- **[Custom Categories](../guides/custom-categories)** - Use your SolarWinds categories
-- **[Comment Deduplication](../guides/comment-deduplication)** - Control update frequency
+- **[Priority Mapping](/guides/priority-mapping)** - Adjust severity-to-priority mapping
+- **[Severity Filtering](/guides/severity-filtering)** - Ignore specific alert severities
+- **[Custom Categories](/guides/custom-categories)** - Use your SolarWinds categories
 
 ### Monitor Usage
 
@@ -185,8 +184,8 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 
 ### Get Support
 
-- **Documentation:** [All Guides](../guides/)
-- **Troubleshooting:** [Common Issues](../troubleshooting/common-issues)
+- **Documentation:** [All Guides](/guides/)
+- **Troubleshooting:** [Common Issues](/troubleshooting/common-issues)
 - **Email:** support@cynteocloud.com
 
 ---
@@ -210,5 +209,5 @@ A: Full functionality, up to your plan's alert limit, for 30 days. No credit car
 
 ---
 
-**Need help?** Check our [troubleshooting guide](../troubleshooting/common-issues) or [contact support](mailto:support@cynteocloud.com).
+**Need help?** Check our [troubleshooting guide](/troubleshooting/common-issues) or [contact support](mailto:support@cynteocloud.com).
 

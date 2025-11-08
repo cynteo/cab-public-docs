@@ -64,7 +64,7 @@ Alert Bridge expects Azure Monitor Common Alert Schema:
 }
 ```
 
-See [Alert Schema Reference](./alert-schema) for complete details.
+See [Alert Schema Reference](/reference/alert-schema) for complete details.
 
 ---
 
@@ -206,9 +206,9 @@ You can monitor Alert Bridge processing through Azure:
 
 ## See Also
 
-- [Alert Schema](./alert-schema) - Input format details
-- [Incident Fields](./incident-fields) - Output format
-- [Configure Action Groups](../guides/configure-alert-action-group) - Setup guide
+- [Alert Schema](/reference/alert-schema) - Input format details
+- [Incident Fields](/reference/incident-fields) - Output format
+- [Configure Action Groups](/guides/configure-alert-action-group) - Setup guide
 
 ---
 
