@@ -1,26 +1,26 @@
 ---
 title: "Priority Mapping"
-description: "Configure how Azure alert severities map to SolarWinds priorities"
+description: "Configure how Azure alert severities map to ITSM platform priorities"
 weight: 2
 ---
 
 # Priority Mapping
 
-Learn how to map Azure Monitor alert severities to SolarWinds Service Desk priority levels.
+Learn how to map Azure Monitor alert severities to your ITSM platform's priority levels.
 
 ---
 
 ## Overview
 
-Azure Monitor uses **severities** (Sev0-Sev4), while SolarWinds uses **priorities** (Critical, High, Medium, Low). Alert Bridge maps between these automatically.
+Azure Monitor uses **severities** (Sev0-Sev4), while most ITSM platforms use **priorities** (e.g., Critical, High, Medium, Low). Cynteo Alert Bridge maps between these automatically.
 
 ---
 
 ## Default Mapping
 
-Out of the box, Alert Bridge uses this mapping:
+Out of the box, Cynteo Alert Bridge uses this mapping:
 
-| Azure Severity | SolarWinds Priority | Description |
+| Azure Severity | Default Priority | Description |
 |----------------|---------------------|-------------|
 | **Sev0** | Critical | System down, immediate action required |
 | **Sev1** | High | Major functionality impaired |
@@ -32,29 +32,29 @@ Out of the box, Alert Bridge uses this mapping:
 
 ## Customizing Priority Mapping
 
-Priority mapping is configured during deployment. The solution can be customized to match your organization's SolarWinds priority structure.
+Priority mapping is configured during deployment. The solution can be customized to match your ITSM platform's priority structure.
 
 **To request a priority mapping change**, contact [support@cynteocloud.com](mailto:support@cynteocloud.com) with your desired mapping.
 
 ---
 
-## SolarWinds Priority Values
+## ITSM Priority Values
 
-Your SolarWinds instance may have different priority names. Common priority structures include:
+Your ITSM platform may have different priority names. Common priority structures include:
 
-**Standard SolarWinds Priorities:**
-- Critical
-- High
-- Medium  
-- Low
+**Standard Priorities:**
+- Critical / P1
+- High / P2
+- Medium / P3
+- Low / P4
 
-Your organization may use custom priority names. The mapping is configured to match your specific SolarWinds priority structure during deployment.
+Your organization may use custom priority names. The mapping is configured to match your specific platform's priority structure during deployment.
 
 ---
 
 ## Custom Priority Examples
 
-Alert Bridge supports various priority mapping strategies:
+Cynteo Alert Bridge supports various priority mapping strategies:
 
 ### Example 1: Escalated Priorities
 All critical and error alerts mapped to high priority for faster response.
@@ -74,9 +74,9 @@ Different environments (Production vs Development) can use different priority ma
 
 When an Azure alert fires, you can verify the priority mapping worked correctly:
 
-### Check the SolarWinds Incident
+### Check the ITSM Incident
 
-1. Open SolarWinds Service Desk
+1. Open your ITSM platform
 2. Find the incident created from the alert
 3. Verify the priority field matches expectations
 
@@ -86,11 +86,11 @@ For example, an Azure Sev1 alert should create a High priority incident (based o
 
 ## Priority-Based Routing
 
-Different priority levels can trigger different response workflows in SolarWinds:
+Different priority levels can trigger different response workflows in your ITSM platform:
 
-### SolarWinds Assignment Rules
+### Auto-Assignment Rules
 
-SolarWinds supports automatic assignment based on priority:
+Most ITSM platforms support automatic assignment based on priority:
    - **Critical Priority** → Route to On-Call Team
    - **High Priority** → Route to Infrastructure Team
    - **Medium/Low Priority** → Route to Operations Team
@@ -101,7 +101,7 @@ This ensures the right team receives alerts based on severity.
 
 ## Advanced Priority Scenarios
 
-Alert Bridge supports advanced priority mapping strategies including:
+Cynteo Alert Bridge supports advanced priority mapping strategies including:
 
 - **Resource Type Based** - Different resources can have different priority mappings
 - **Environment Based** - Production alerts prioritized higher than development
@@ -112,11 +112,18 @@ Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to discuss cus
 
 ---
 
+## Platform-Specific Details
+
+For detailed priority configuration for your platform:
+- **[SolarWinds Priority Mapping](/platforms/solarwinds/categories)** - SolarWinds-specific details
+
+---
+
 ## See Also
 
 - [Configuration Options](/reference/environment-variables) - Available settings
 - [Severity Filtering](/guides/severity-filtering) - Filter by severity
-- [Custom Categories](/guides/custom-categories) - SolarWinds categories
+- [Incident Categories](/guides/categories) - Category configuration
 
 ---
 

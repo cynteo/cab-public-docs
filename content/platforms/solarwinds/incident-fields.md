@@ -1,12 +1,18 @@
+---
+title: "Incident Fields Reference"
+description: "Complete reference of what data Cynteo Alert Bridge sends to SolarWinds Service Desk incidents"
+weight: 1
+---
+
 # Incident Fields Reference
 
-Complete reference of what data Alert Bridge sends to SolarWinds Service Desk incidents.
+Complete reference of what data Cynteo Alert Bridge sends to SolarWinds Service Desk incidents.
 
 ---
 
 ## Incident Structure
 
-Every incident created by Alert Bridge includes:
+Every incident created by Cynteo Alert Bridge includes:
 
 ### Basic Fields
 
@@ -151,7 +157,7 @@ Default mapping (configurable):
 | Sev2 | Medium | Performance degradation |
 | Sev3 | Low | Informational, capacity planning |
 
-**Customize:** See [Priority Mapping Guide](../guides/priority-mapping)
+**Customize:** See [Priority Mapping Guide](/guides/priority-mapping)
 
 ---
 
@@ -164,7 +170,7 @@ Default mapping (configurable):
 
 ### Auto-Detection
 
-Alert Bridge automatically detects category based on resource type:
+Cynteo Alert Bridge automatically detects category based on resource type:
 
 | Resource Type | Category |
 |---------------|----------|
@@ -316,7 +322,7 @@ itsm-automation@company.com
 
 ## Data Not Included
 
-Alert Bridge does NOT send:
+Cynteo Alert Bridge does NOT send:
 
 - ❌ Azure subscription credentials
 - ❌ Resource access keys
@@ -337,13 +343,13 @@ Future versions will support:
 - Custom descriptions
 - Field mapping rules
 
-[View Roadmap](./roadmap)
+[View Roadmap](/reference/roadmap)
 
 ---
 
 ## Example: Full Incident Payload
 
-What Alert Bridge sends to SolarWinds API:
+What Cynteo Alert Bridge sends to SolarWinds API:
 
 ```json
 {
@@ -371,9 +377,9 @@ What Alert Bridge sends to SolarWinds API:
 
 ## See Also
 
-- [Alert Schema](./alert-schema) - Input from Azure Monitor
-- [Environment Variables](./environment-variables) - Configuration options
-- [Priority Mapping](../guides/priority-mapping) - Customize mapping
+- [Alert Schema](/reference/alert-schema) - Input from Azure Monitor
+- [Environment Variables](/reference/environment-variables) - Configuration options
+- [Priority Mapping](/guides/priority-mapping) - Customize mapping
 - [SolarWinds API](https://help.samanage.com/s/article/Incidents-API) - Official docs
 
 ---

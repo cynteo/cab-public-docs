@@ -1,6 +1,6 @@
 # Cynteo Alert Bridge Documentation
 
-Official documentation for Cynteo Alert Bridge - the automated integration between Azure Monitor and SolarWinds Service Desk.
+Official documentation for Cynteo Alert Bridge - the automated integration between Azure Monitor and your ITSM platform.
 
 ## 📖 About
 

@@ -1,12 +1,12 @@
 ---
 title: "Severity Filtering"
-description: "Filter which alert severities create SolarWinds incidents"
+description: "Filter which alert severities create ITSM incidents"
 weight: 3
 ---
 
 # Severity Filtering
 
-Configure Alert Bridge to only create incidents for specific severity levels.
+Configure Cynteo Alert Bridge to only create incidents for specific severity levels.
 
 ---
 
@@ -15,7 +15,7 @@ Configure Alert Bridge to only create incidents for specific severity levels.
 Not all alerts need a ticket. Use severity filtering to:
 - Reduce ticket noise
 - Focus on critical issues
-- Save SolarWinds API calls
+- Save ITSM API calls
 - Improve team efficiency
 
 ---
@@ -51,6 +51,10 @@ Create incidents for alerts at or above a severity threshold (e.g., Sev2 and abo
 ### Option 3: No Filtering (Default)
 All severities create incidents for comprehensive tracking.
 
+---
+
+## Configuration
+
 **To configure severity filtering**, specify your requirements during deployment or contact [support@cynteocloud.com](mailto:support@cynteocloud.com).
 
 ---
@@ -85,16 +89,16 @@ Different environments can have different filtering rules.
 
 When configured, severity filtering automatically processes alerts according to your rules:
 
-- **Matching alerts** → Create/update incidents in SolarWinds
+- **Matching alerts** → Create/update incidents in your ITSM platform
 - **Filtered alerts** → Logged but no incident created
 
-You can verify filtering is working by checking SolarWinds for which incidents are being created.
+You can verify filtering is working by checking your ITSM platform for which incidents are being created.
 
 ---
 
 ## Advanced Filtering Scenarios
 
-Alert Bridge supports sophisticated filtering strategies beyond simple severity levels:
+Cynteo Alert Bridge supports sophisticated filtering strategies beyond simple severity levels:
 
 ### Resource Type Filtering
 Filter based on Azure resource type (e.g., only create tickets for VM and database alerts).
@@ -131,6 +135,13 @@ Even when alerts are filtered from ticket creation, they remain visible in Azure
 ## Questions About Filtering?
 
 To configure or adjust severity filtering for your deployment, contact [support@cynteocloud.com](mailto:support@cynteocloud.com).
+
+---
+
+## Platform-Specific Details
+
+For detailed filtering configuration for your platform:
+- **[SolarWinds Filtering](/platforms/solarwinds/)** - SolarWinds-specific details
 
 ---
 

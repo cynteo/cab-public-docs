@@ -28,7 +28,7 @@ Before you begin, make sure you have:
 ### 1.1 Find Cynteo Alert Bridge
 
 1. Go to [Azure Marketplace](https://azuremarketplace.microsoft.com)
-2. Search for **"Cynteo Alert Bridge for SolarWinds"**
+2. Search for **"Cynteo Alert Bridge"**
 3. Click **"Get It Now"**
 4. Click **"Continue"** to go to Azure Portal
 
@@ -40,19 +40,17 @@ Before you begin, make sure you have:
 - **Region:** Same region as your resources (e.g., East US)
 - **Application Name:** Give it a friendly name (e.g., `alert-bridge-prod`)
 
-**SolarWinds Configuration Tab:**
-- **API Token:** Paste your SolarWinds API token
-- **Base URL:** Usually `https://api.samanage.com` (default)
+**Platform Configuration Tab:**
+- **ITSM API Token:** Paste your platform API token
+- **ITSM API URL:** Your platform's API endpoint
 - **Requester Email:** Email for created incidents (e.g., `azure-monitor@yourcompany.com`)
+- **Platform Type:** Select your ITSM platform (SolarWinds, etc.)
 
 **Alert Configuration Tab:**
-- **Priority Mapping:**
-  - Sev0 → High
-  - Sev1 → High
-  - Sev2 → Medium
-  - Sev3 → Low
-- **Category:** Infrastructure (or your preferred category)
-- **Subcategory:** Azure Monitor (or your preferred subcategory)
+- **Priority Mapping:** Configure severity-to-priority mapping
+- **Category:** Default incident category
+- **Subcategory:** Default incident subcategory
+- **Severity Filter:** (Optional) Only process specific severities
 
 **Notifications Tab:**
 - **Email:** Your email for usage notifications
@@ -92,13 +90,13 @@ https://prod-123.eastus.logic.azure.com:443/workflows/.../triggers/manual/paths/
 
 **Basics:**
 - **Subscription:** Your subscription
-- **Resource Group:** Same as Alert Bridge
-- **Action group name:** `alert-bridge-solarwinds`
-- **Display name:** `SolarWinds`
+- **Resource Group:** Same as Cynteo Alert Bridge
+- **Action group name:** `alert-bridge-itsm`
+- **Display name:** `ITSM Bridge`
 
 **Actions:**
 - **Action type:** Webhook
-- **Name:** `Send to SolarWinds`
+- **Name:** `Send to ITSM`
 - **Webhook URL:** Paste URL from Step 2
 - **Enable common alert schema:** ✅ **YES** (Important!)
 
@@ -106,7 +104,7 @@ https://prod-123.eastus.logic.azure.com:443/workflows/.../triggers/manual/paths/
 
 ### 3.2 Add to Alert Rules
 
-For each alert you want sent to SolarWinds:
+For each alert you want sent to your ITSM platform:
 
 1. Go to **Monitor → Alerts → Alert rules**
 2. Select an alert rule
@@ -131,14 +129,14 @@ For each alert you want sent to SolarWinds:
 4. Actions: Select `alert-bridge-solarwinds`
 5. Save and wait 1-2 minutes
 
-### 4.2 Verify in SolarWinds
+### 4.2 Verify in Your ITSM Platform
 
-1. Go to SolarWinds Service Desk
-2. Check **Incidents** list
+1. Log into your ITSM platform
+2. Go to **Incidents** or **Tickets**
 3. You should see a new incident:
    - **Title:** `Azure Alert: [Your Alert Name]`
    - **Priority:** Based on severity mapping
-   - **Description:** Rich HTML with alert details
+   - **Description:** Rich alert details and context
 
 **If you don't see it:** Check [Troubleshooting Guide](/troubleshooting/alert-not-creating-tickets)
 
@@ -151,20 +149,20 @@ For each alert you want sent to SolarWinds:
 - If you created a test alert with CPU > 1%, delete the alert rule
 - If using real alert, wait for condition to clear
 
-### 5.2 Verify in SolarWinds
+### 5.2 Verify in Your ITSM Platform
 
 1. Go to the incident created in Step 4.2
 2. Wait ~2 minutes
 3. Incident should show:
    - **State:** Resolved
-   - **Resolution Description:** "Resolved automatically by Azure Monitor..."
-   - **Comment:** Details about resolution
+   - **Resolution Note:** "Resolved automatically by Azure Monitor..."
+   - **Updated status** with resolution details
 
 ---
 
 ## ✅ You're Done!
 
-Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
+Your Azure Monitor alerts are now automatically creating ITSM incidents!
 
 ---
 
@@ -174,7 +172,7 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 
 - **[Priority Mapping](/guides/priority-mapping)** - Adjust severity-to-priority mapping
 - **[Severity Filtering](/guides/severity-filtering)** - Ignore specific alert severities
-- **[Custom Categories](/guides/custom-categories)** - Use your SolarWinds categories
+- **[Incident Categories](/guides/categories)** - Customize incident categorization
 
 ### Monitor Usage
 
@@ -192,17 +190,17 @@ Your Azure Monitor alerts are now automatically creating SolarWinds incidents!
 
 ## Common Questions
 
-**Q: Do I need to configure anything in SolarWinds?**  
-A: No! Just make sure your API token has permission to create incidents.
+**Q: Do I need to configure anything in my ITSM platform?**  
+A: Just generate an API token with the required permissions. See platform-specific guides for details.
 
 **Q: Will this create duplicate tickets?**  
-A: No, Alert Bridge tracks alerts and updates the same ticket if an alert fires multiple times.
+A: No, Cynteo Alert Bridge tracks alerts and updates the same ticket if an alert fires multiple times.
 
 **Q: What happens if an alert fires then resolves then fires again?**  
 A: A new incident will be created for the second occurrence.
 
 **Q: Can I use this with multiple Azure subscriptions?**  
-A: Yes! Deploy Alert Bridge in each subscription, or use one deployment and add action groups in each subscription pointing to the same webhook URL.
+A: Yes! Deploy Cynteo Alert Bridge in each subscription, or use one deployment and add action groups in each subscription pointing to the same webhook URL.
 
 **Q: What's included in the free trial?**  
 A: Full functionality, up to your plan's alert limit, for 30 days. No credit card required.

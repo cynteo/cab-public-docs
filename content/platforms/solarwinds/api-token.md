@@ -6,13 +6,13 @@ weight: 5
 
 # SolarWinds API Token
 
-Complete guide to generating and managing your SolarWinds Service Desk API token for Alert Bridge.
+Complete guide to generating and managing your SolarWinds Service Desk API token for Cynteo Alert Bridge.
 
 ---
 
 ## What is an API Token?
 
-An API token is a secure authentication credential that allows Alert Bridge to:
+An API token is a secure authentication credential that allows Cynteo Alert Bridge to:
 - ✅ Create incidents in SolarWinds
 - ✅ Update existing incidents
 - ✅ Add comments to incidents
@@ -105,7 +105,7 @@ Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYW1hbmFn
 
 ---
 
-## Configuring Alert Bridge
+## Configuring Cynteo Alert Bridge
 
 ### Option 1: Direct (Not Recommended)
 
@@ -240,7 +240,7 @@ If token is compromised:
 3. Confirm revocation
 4. Token immediately invalidated
 
-### Updating Token in Alert Bridge
+### Updating Token in Cynteo Alert Bridge
 
 After generating new token:
 
@@ -316,7 +316,7 @@ Be aware of SolarWinds API rate limits:
 | Premium | 5,000 | 50,000 |
 | Enterprise | Custom | Custom |
 
-Alert Bridge automatically respects these limits with request queuing.
+Cynteo Alert Bridge automatically respects these limits with request queuing.
 
 ---
 

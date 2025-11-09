@@ -138,7 +138,7 @@ Get early access to new features!
 
 Email [beta@cynteocloud.com](mailto:beta@cynteocloud.com) with:
 - Company name
-- Current Alert Bridge usage
+- Current Cynteo Alert Bridge usage
 - Features you're interested in
 
 ---

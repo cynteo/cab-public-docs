@@ -12,7 +12,7 @@ Technical reference for integrating with Cynteo Alert Bridge.
 
 ## Webhook Endpoint
 
-Alert Bridge provides a secure webhook endpoint that accepts Azure Monitor alerts.
+Cynteo Alert Bridge provides a secure webhook endpoint that accepts Azure Monitor alerts.
 
 ### Endpoint URL
 
@@ -38,7 +38,7 @@ User-Agent: Azure-Alerts/1.0
 
 ### Body
 
-Alert Bridge expects Azure Monitor Common Alert Schema:
+Cynteo Alert Bridge expects Azure Monitor Common Alert Schema:
 
 ```json
 {
@@ -141,7 +141,7 @@ Content-Type: application/json
 | Standard | 1,000 |
 | Premium | 5,000 |
 
-**Note:** Alert Bridge automatically queues requests to stay within limits.
+**Note:** Cynteo Alert Bridge automatically queues requests to stay within limits.
 
 ---
 
@@ -149,7 +149,7 @@ Content-Type: application/json
 
 ### Using Azure Action Group Test
 
-The easiest way to test Alert Bridge:
+The easiest way to test Cynteo Alert Bridge:
 
 1. Go to **Azure Portal** → **Monitor** → **Action groups**
 2. Select your action group
@@ -189,9 +189,9 @@ Fire a real alert to test end-to-end functionality:
 
 ### Check Processing Status
 
-You can monitor Alert Bridge processing through Azure:
+You can monitor Cynteo Alert Bridge processing through Azure:
 
-1. **Azure Portal** → Your Alert Bridge resource
+1. **Azure Portal** → Your Cynteo Alert Bridge resource
 2. View **Run History** to see recent alert processing
 3. Check for any failures or errors
 4. Review execution times

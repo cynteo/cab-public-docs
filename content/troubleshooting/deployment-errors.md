@@ -1,12 +1,12 @@
 ---
 title: "Deployment Errors"
-description: "Troubleshoot Azure deployment errors for Alert Bridge"
+description: "Troubleshoot Azure deployment errors for Cynteo Alert Bridge"
 weight: 2
 ---
 
 # Deployment Errors
 
-Solutions for common errors during Azure deployment of Alert Bridge.
+Solutions for common errors during Azure deployment of Cynteo Alert Bridge.
 
 ---
 

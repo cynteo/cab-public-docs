@@ -6,7 +6,7 @@ weight: 3
 
 # SolarWinds Categories & Priorities
 
-Learn how to configure categories and priority mappings for incidents created by Alert Bridge.
+Learn how to configure categories and priority mappings for incidents created by Cynteo Alert Bridge.
 
 ---
 
@@ -31,7 +31,7 @@ Infrastructure
 
 ### Default Categories
 
-Alert Bridge uses these defaults:
+Cynteo Alert Bridge uses these defaults:
 - **Category:** Infrastructure
 - **Subcategory:** Azure Monitor
 
@@ -53,7 +53,7 @@ You can specify custom categories during deployment. Categories must already exi
 
 ### Priority Mapping
 
-Alert Bridge maps Azure alert severities to SolarWinds priorities:
+Cynteo Alert Bridge maps Azure alert severities to SolarWinds priorities:
 
 | Azure Severity | Default Priority | Customizable |
 |----------------|------------------|--------------|
@@ -110,11 +110,11 @@ AND priority = "Critical"
 THEN assign to "On-Call Team"
 ```
 
-This is configured in SolarWinds, not Alert Bridge.
+This is configured in SolarWinds, not Cynteo Alert Bridge.
 
 ### Configuring Assignment
 
-Alert Bridge can optionally specify an assignment group during incident creation. This is configured during deployment.
+Cynteo Alert Bridge can optionally specify an assignment group during incident creation. This is configured during deployment.
 
 **Benefits:**
 - Automatic routing to correct team

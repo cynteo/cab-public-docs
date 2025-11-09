@@ -1,12 +1,12 @@
 ---
 title: "Azure Monitor Configuration"
-description: "Configure Azure Monitor alerts to work with Alert Bridge"
+description: "Configure Azure Monitor alerts to work with Cynteo Alert Bridge"
 weight: 3
 ---
 
 # Azure Monitor Configuration
 
-Configure Azure Monitor alerts to work with Alert Bridge.
+Configure Azure Monitor alerts to work with Cynteo Alert Bridge.
 
 ---
 
@@ -20,14 +20,14 @@ Cynteo Alert Bridge integrates with Azure Monitor using **Action Groups** and **
 
 - Azure subscription with Monitor alerts configured
 - Contributor access to create/modify alert rules
-- Alert Bridge deployed ([Quick Start](/getting-started/quickstart))
+- Cynteo Alert Bridge deployed ([Quick Start](/getting-started/quickstart))
 
 ---
 
 ## Understanding Alert Flow
 
 ```
-Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridge → SolarWinds
+Azure Resource → Azure Monitor → Alert Rule → Action Group → Cynteo Alert Bridge → SolarWinds
 ```
 
 ---
@@ -45,7 +45,7 @@ Azure Resource → Azure Monitor → Alert Rule → Action Group → Alert Bridg
 ### 1.2 Configure Basics
 
 **Subscription:** Your Azure subscription  
-**Resource Group:** Same as Alert Bridge (recommended)  
+**Resource Group:** Same as Cynteo Alert Bridge (recommended)  
 **Region:** Global (default)  
 **Action group name:** `alert-bridge-solarwinds`  
 **Display name:** `SolarWinds` (shows in alert emails)
@@ -56,10 +56,10 @@ Click **"Next: Actions"**
 
 **Action type:** Webhook  
 **Name:** `Send to SolarWinds`  
-**URI:** Paste your Alert Bridge webhook URL
+**URI:** Paste your Cynteo Alert Bridge webhook URL
 
 **To get webhook URL:**
-1. Go to your Alert Bridge resource group
+1. Go to your Cynteo Alert Bridge resource group
 2. Click the Logic App (name: `logicapp-*`)
 3. Click "Overview"
 4. Copy "Callback URL"
@@ -139,7 +139,7 @@ Azure Monitor severity maps to SolarWinds priority:
 | Sev2 | Medium | Performance degradation |
 | Sev3 | Low | Informational |
 
-**Configure this mapping during Alert Bridge deployment.**
+**Configure this mapping during Cynteo Alert Bridge deployment.**
 
 ---
 
@@ -147,7 +147,7 @@ Azure Monitor severity maps to SolarWinds priority:
 
 ### Why Common Alert Schema is Required
 
-Alert Bridge requires **Common Alert Schema** to properly parse alerts.
+Cynteo Alert Bridge requires **Common Alert Schema** to properly parse alerts.
 
 **✅ Correct (Common Alert Schema):**
 ```json
@@ -188,7 +188,7 @@ Alert Bridge requires **Common Alert Schema** to properly parse alerts.
 
 ## Alert Types Supported
 
-Alert Bridge supports all Azure Monitor alert types:
+Cynteo Alert Bridge supports all Azure Monitor alert types:
 
 ### Metric Alerts
 - Virtual machine metrics (CPU, memory, disk)
@@ -317,19 +317,19 @@ This prevents multiple incidents for rapid-fire alerts.
 
 ### Multi-Subscription Setup
 
-**Option A: Deploy Alert Bridge in each subscription**
+**Option A: Deploy Cynteo Alert Bridge in each subscription**
 - Isolated per subscription
 - Separate billing per deployment
 
-**Option B: Use one Alert Bridge for all subscriptions**
-1. Deploy Alert Bridge in "hub" subscription
+**Option B: Use one Cynteo Alert Bridge for all subscriptions**
+1. Deploy Cynteo Alert Bridge in "hub" subscription
 2. Get webhook URL
 3. Create action groups in each subscription pointing to same URL
 4. All alerts go to same SolarWinds instance
 
 ### Filtering by Resource Group
 
-Alert Bridge processes ALL alerts sent to it. To filter:
+Cynteo Alert Bridge processes ALL alerts sent to it. To filter:
 
 1. Create separate action groups for different resource groups
 2. Or use [severity filtering](/guides/severity-filtering)
@@ -337,7 +337,7 @@ Alert Bridge processes ALL alerts sent to it. To filter:
 
 ### Custom Fields
 
-Alert Bridge includes:
+Cynteo Alert Bridge includes:
 - Alert ID (for deduplication)
 - Resource information
 - Metric values

@@ -1,17 +1,17 @@
 ---
-title: "Cynteo Alert Bridge for SolarWinds Service Desk"
-description: "Connect Azure Monitor alerts to your SolarWinds Service Desk automatically"
+title: "Cynteo Alert Bridge"
+description: "Connect Azure Monitor alerts to your ITSM platform automatically"
 ---
 
-# Cynteo Alert Bridge for SolarWinds Service Desk
+# Cynteo Alert Bridge
 
-**Connect Azure Monitor alerts to your SolarWinds Service Desk automatically**
+**Connect Azure Monitor alerts to your ITSM platform automatically**
 
 ---
 
 ## 🚀 What is Cynteo Alert Bridge?
 
-Cynteo Alert Bridge is a fully managed integration that automatically creates, updates, and resolves SolarWinds Service Desk incidents based on your Azure Monitor alerts.
+Cynteo Alert Bridge is a fully managed integration that automatically creates, updates, and resolves ITSM incidents based on your Azure Monitor alerts.
 
 ### Key Features
 
@@ -29,14 +29,14 @@ Cynteo Alert Bridge is a fully managed integration that automatically creates, u
 ```
 Azure Monitor Alert Fires
         ↓
-Cynteo Alert Bridge (Logic App)
+Cynteo Alert Bridge
         ↓
-SolarWinds Service Desk Incident Created
+ITSM Platform Incident Created
 ```
 
 When an alert fires:
-1. Azure Monitor sends webhook to Alert Bridge
-2. Alert Bridge checks if ticket already exists for this alert
+1. Azure Monitor sends webhook to Cynteo Alert Bridge
+2. Cynteo Alert Bridge checks if ticket already exists for this alert
 3. Creates new incident OR updates existing incident
 4. When alert resolves, incident is automatically marked as resolved
 
@@ -111,13 +111,15 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 - [Configure Alert Action Group](/guides/configure-alert-action-group)
 - [Priority Mapping](/guides/priority-mapping)
 - [Severity Filtering](/guides/severity-filtering)
-- [Custom Categories](/guides/custom-categories)
-- [SolarWinds Categories](/platforms/solarwinds/categories)
+- [Incident Categories](/guides/categories)
 
 ### Reference
-- [Incident Fields](/reference/incident-fields)
+- [Incident Fields Overview](/reference/incident-fields)
 - [Alert Schema](/reference/alert-schema)
-- [Environment Variables](/reference/environment-variables)
+- [Configuration Options](/reference/environment-variables)
+- [Security](/reference/security)
+- [API Reference](/reference/api)
+- [Changelog](/reference/changelog)
 
 ### Troubleshooting
 - [Common Issues](/troubleshooting/common-issues)

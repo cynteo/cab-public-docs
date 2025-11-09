@@ -1,12 +1,12 @@
 ---
 title: "Common Issues and Solutions"
-description: "Quick solutions to the most common Alert Bridge problems"
+description: "Quick solutions to the most common Cynteo Alert Bridge problems"
 weight: 1
 ---
 
 # Common Issues and Solutions
 
-Quick solutions to the most common Alert Bridge problems.
+Quick solutions to the most common Cynteo Alert Bridge problems.
 
 ---
 
@@ -24,7 +24,7 @@ Alert fires in Azure Monitor, but no incident appears in SolarWinds.
 - ✅ Confirm "Enable common alert schema" is checked
 
 **2. Check Logic App Run History**
-- Go to Alert Bridge resource group
+- Go to Cynteo Alert Bridge resource group
 - Click Logic App resource
 - Click "Overview" → "Runs history"
 - Look for recent runs
@@ -61,7 +61,7 @@ Alert fires in Azure Monitor, but no incident appears in SolarWinds.
 
 **Fix:**
 1. Generate new API token in SolarWinds
-2. Go to Key Vault resource in Alert Bridge resource group
+2. Go to Key Vault resource in Cynteo Alert Bridge resource group
 3. Click "Secrets"
 4. Find secret (name: `solarwinds-*`)
 5. Click "New version"
@@ -95,12 +95,12 @@ Multiple incidents created for the same alert.
 
 **1. Alert ID Changed**
 - Azure generates new alert ID
-- Alert Bridge can't deduplicate
+- Cynteo Alert Bridge can't deduplicate
 
 **Fix:** Not much you can do - this is Azure Monitor behavior
 
 **2. Multiple Action Groups**
-- Same alert has multiple action groups pointing to Alert Bridge
+- Same alert has multiple action groups pointing to Cynteo Alert Bridge
 
 **Fix:**
 1. Check alert rule → Actions
@@ -164,7 +164,7 @@ Alerts take > 5 minutes to create incidents.
 ### Normal Latency
 - **Azure Monitor detection:** 1-5 minutes
 - **Action group trigger:** < 30 seconds
-- **Alert Bridge processing:** < 10 seconds
+- **Cynteo Alert Bridge processing:** < 10 seconds
 - **SolarWinds API:** < 5 seconds
 - **Total:** Usually 2-6 minutes
 
@@ -195,7 +195,7 @@ Priority mapping configured incorrectly during deployment.
 
 ### Check Current Mapping
 
-1. Go to Alert Bridge Function App
+1. Go to Cynteo Alert Bridge Function App
 2. **Settings** → **Configuration**
 3. Check environment variables:
    - `PRIORITY_SEV0`
@@ -216,7 +216,7 @@ See [Priority Mapping Guide](/guides/priority-mapping)
 
 **Fix:**
 1. Delete the resource group if it exists
-2. Deploy again (Alert Bridge generates new unique names)
+2. Deploy again (Cynteo Alert Bridge generates new unique names)
 
 ### "Insufficient permissions"
 
@@ -271,7 +271,7 @@ See [Priority Mapping Guide](/guides/priority-mapping)
    - See [SolarWinds Setup](/platforms/solarwinds/setup)
 
 2. **Update in Key Vault**
-   - Go to Key Vault in Alert Bridge resource group
+   - Go to Key Vault in Cynteo Alert Bridge resource group
    - **Secrets** → Find your secret
    - **New version** → Paste new token
    - Save

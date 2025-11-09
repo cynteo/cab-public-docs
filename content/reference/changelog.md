@@ -98,7 +98,7 @@ See our [Roadmap](/reference/roadmap) for planned features.
 
 ### Automatic Updates
 
-Alert Bridge automatically updates to the latest version. No action required.
+Cynteo Alert Bridge automatically updates to the latest version. No action required.
 
 ### Breaking Changes
 

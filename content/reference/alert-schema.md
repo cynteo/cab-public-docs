@@ -6,7 +6,7 @@ weight: 3
 
 # Alert Schema Reference
 
-Understanding the Azure Monitor Common Alert Schema that Alert Bridge processes.
+Understanding the Azure Monitor Common Alert Schema that Cynteo Alert Bridge processes.
 
 ---
 
@@ -120,11 +120,11 @@ Additional details specific to alert type:
 
 ---
 
-## How Alert Bridge Uses Schema
+## How Cynteo Alert Bridge Uses Schema
 
 ### Field Mapping
 
-Alert Bridge extracts these fields to create SolarWinds incidents:
+Cynteo Alert Bridge extracts these fields to create SolarWinds incidents:
 
 | Azure Field | SolarWinds Field | Transformation |
 |-------------|------------------|----------------|
@@ -136,7 +136,7 @@ Alert Bridge extracts these fields to create SolarWinds incidents:
 
 ### Deduplication Key
 
-Alert Bridge uses these fields to identify unique alerts:
+Cynteo Alert Bridge uses these fields to identify unique alerts:
 
 ```
 {alertId}-{originAlertId}

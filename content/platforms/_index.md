@@ -16,7 +16,7 @@ Cynteo Alert Bridge integrates with leading ITSM platforms. Select your platform
 
 Fully supported with comprehensive documentation.
 
-- [Setup Guide](/platforms/solarwinds/setup) - Configure SolarWinds for Alert Bridge
+- [Setup Guide](/platforms/solarwinds/setup) - Configure SolarWinds for Cynteo Alert Bridge
 - [API Token Guide](/platforms/solarwinds/api-token) - Generate and manage API tokens
 - [Categories & Priorities](/platforms/solarwinds/categories) - Configure incident categorization
 

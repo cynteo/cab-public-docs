@@ -1,12 +1,12 @@
 ---
 title: "Configure Alert Action Group"
-description: "Complete guide to setting up Azure Monitor action groups for Alert Bridge"
+description: "Set up Azure Monitor action groups to send alerts to Cynteo Alert Bridge"
 weight: 1
 ---
 
 # Configure Alert Action Group
 
-Complete guide to setting up Azure Monitor action groups for Alert Bridge.
+Complete guide to connecting Azure Monitor alerts to Cynteo Alert Bridge using action groups.
 
 ---
 
@@ -14,14 +14,14 @@ Complete guide to setting up Azure Monitor action groups for Alert Bridge.
 
 An **Action Group** is a collection of notification and action settings that can be reused across multiple alert rules. It defines **what happens** when an alert fires.
 
-For Alert Bridge, the action group sends alert data to your SolarWinds integration via webhook.
+For Cynteo Alert Bridge, the action group sends alert data to your ITSM integration via webhook.
 
 ---
 
 ## Prerequisites
 
 - Azure subscription
-- Alert Bridge deployed and running
+- Cynteo Alert Bridge deployed and running
 - Contributor access to create action groups
 
 ---
@@ -31,7 +31,7 @@ For Alert Bridge, the action group sends alert data to your SolarWinds integrati
 ### Step 1: Get Webhook URL
 
 1. Go to **Azure Portal** → **Resource Groups**
-2. Find your Alert Bridge resource group (e.g., `rg-alert-bridge`)
+2. Find your Cynteo Alert Bridge resource group (e.g., `rg-alert-bridge`)
 3. Click the **Logic App** resource (name: `logicapp-*`)
 4. Click **"Overview"** tab
 5. Find **"Workflow URL"** or **"Callback URL"**
@@ -58,7 +58,7 @@ https://prod-123.eastus.logic.azure.com:443/workflows/abc123.../triggers/manual/
 #### Basics Tab
 
 **Subscription:** Select your Azure subscription  
-**Resource Group:** Select same as Alert Bridge (recommended)  
+**Resource Group:** Select same as Cynteo Alert Bridge (recommended)  
 **Region:** Global (default)  
 **Action group name:** `alert-bridge-solarwinds`  
 **Display name:** `SolarWinds`  
@@ -290,7 +290,7 @@ When "Enable common alert schema" is checked, Azure sends:
 }
 ```
 
-**Alert Bridge uses this structured data to create rich SolarWinds incidents!**
+**Cynteo Alert Bridge uses this structured data to create rich ITSM incidents with full context!**
 
 ---
 

@@ -42,9 +42,9 @@ Set up categories for organized incident tracking:
 
 [Configure Categories →](/platforms/solarwinds/categories)
 
-### Step 4: Deploy Alert Bridge
+### Step 4: Deploy Cynteo Alert Bridge
 
-With your API token ready, deploy Alert Bridge from Azure Marketplace.
+With your API token ready, deploy Cynteo Alert Bridge from Azure Marketplace.
 
 [Deployment Guide →](/getting-started/quickstart)
 
@@ -54,7 +54,7 @@ With your API token ready, deploy Alert Bridge from Azure Marketplace.
 
 ### Incident Field Mapping
 
-Alert Bridge populates these SolarWinds fields:
+Cynteo Alert Bridge populates these SolarWinds fields:
 
 | SolarWinds Field | Source | Customizable |
 |------------------|--------|--------------|
@@ -103,7 +103,9 @@ You can specify custom categories during deployment.
 ### Setup Guides
 - [Initial Setup](/platforms/solarwinds/setup) - Complete SolarWinds configuration
 - [API Token Management](/platforms/solarwinds/api-token) - Generate and rotate tokens
-- [Categories & Priorities](/platforms/solarwinds/categories) - Configure incident organization
+- [Categories & Priorities](/platforms/solarwinds/categories) - SolarWinds categorization
+- [Incident Fields](/platforms/solarwinds/incident-fields) - SolarWinds field mapping
+- [Custom Categories](/platforms/solarwinds/custom-categories) - Advanced categorization
 
 ### Troubleshooting
 - [Common Issues](/troubleshooting/common-issues) - SolarWinds-specific problems
@@ -116,7 +118,7 @@ You can specify custom categories during deployment.
 
 ### SolarWinds API Endpoints
 
-Alert Bridge uses these SolarWinds API endpoints:
+Cynteo Alert Bridge uses these SolarWinds API endpoints:
 
 - **Incidents API:** `https://api.samanage.com/incidents.json`
 - **Comments API:** `https://api.samanage.com/incidents/{id}/comments.json`
@@ -131,7 +133,7 @@ Alert Bridge uses these SolarWinds API endpoints:
 | Premium | 5,000 |
 | Enterprise | Custom |
 
-Alert Bridge automatically queues requests to stay within limits.
+Cynteo Alert Bridge automatically queues requests to stay within limits.
 
 ---
 
