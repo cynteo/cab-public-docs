@@ -10,83 +10,91 @@ Upcoming features and enhancements for Cynteo Alert Bridge.
 
 ---
 
-## Q4 2025
+## Q4 2025 - Q1 2026
 
 ### 🎯 High Priority
 
-- **Custom Field Mapping** - Map Azure properties to custom SolarWinds fields
-- **ServiceNow Support** - Expand beyond SolarWinds to ServiceNow
-- **Teams Integration** - Send notifications to Microsoft Teams
+- **ConnectWise Support** - Full integration with ConnectWise Manage and PSA
+  - Board-based routing
+  - Ticket owner assignment
+  - Company/contact mapping
+  - Priority and status sync
+- **MSP Portal** - Centralized dashboard for managing multiple customer deployments
 - **Advanced Filtering** - Filter by resource tags, subscription, or resource group
+- **Teams Integration** - Send notifications to Microsoft Teams
 
 ### 📊 Enhancements
 
-- **Dashboard** - Real-time monitoring dashboard for alert processing
-- **Analytics** - Incident creation metrics and trends
-- **Bulk Actions** - Update multiple incidents at once
-
----
-
-## Q1 2026
-
-### 🚀 New Features
-
-- **Multi-Tenant Support** - Manage multiple Azure tenants
-- **Alert Enrichment** - Add custom data to incidents
-- **Workflow Automation** - Custom actions on alert conditions
-- **Incident Templates** - Predefined templates for different alert types
-
-### 🔧 Improvements
-
-- **Performance** - 50% faster processing for high-volume environments
-- **Reliability** - Enhanced retry logic and error recovery
-- **Logging** - Detailed execution logs with search
+- **Analytics Dashboard** - Real-time monitoring across all deployments
+- **Usage Reporting** - Per-customer usage metrics for MSPs
+- **Bulk Deployment** - Deploy to multiple tenants simultaneously
 
 ---
 
 ## Q2 2026
 
-### 🌟 Major Features
+### 🚀 New Features
 
-- **Jira Integration** - Support for Jira Service Management
-- **Slack Integration** - Alert notifications in Slack
-- **PagerDuty Bridge** - Integrate with PagerDuty for on-call
-- **Custom Webhooks** - Send alerts to any HTTP endpoint
+- **ServiceNow Support** - Enterprise ServiceNow integration
+  - Assignment group routing
+  - CMDB integration
+  - Custom field mapping
+- **Jira Service Management** - Jira integration for development teams
+- **Alert Enrichment** - Add custom data to incidents
+- **Workflow Automation** - Custom actions on alert conditions
 
-### 🎨 User Experience
+### 🔧 Improvements
 
-- **Configuration UI** - Web-based configuration portal
-- **Alert Preview** - Test alerts before deployment
-- **Documentation Hub** - Interactive guides and tutorials
+- **Performance** - 50% faster processing for high-volume environments
+- **Reliability** - Enhanced retry logic and error recovery
+- **Multi-region Failover** - High availability across regions
 
 ---
 
 ## Q3 2026
+
+### 🌟 Major Features
+
+- **Slack Integration** - Alert notifications in Slack channels
+- **PagerDuty Bridge** - Integrate with PagerDuty for on-call management
+- **Custom Webhooks** - Send alerts to any HTTP endpoint
+- **Mobile App** - iOS and Android app for incident management
+
+### 🎨 User Experience
+
+- **Configuration Portal** - Web-based management interface
+- **Alert Preview** - Test alerts before deployment
+- **Interactive Tutorials** - Guided setup and configuration
+
+---
+
+## Q4 2026 and Beyond
 
 ### 🔐 Enterprise Features
 
 - **SSO Integration** - Azure AD and SAML support
 - **Audit Logging** - Comprehensive audit trail
 - **Compliance Reports** - SOC 2, HIPAA, ISO compliance reporting
-- **High Availability** - Multi-region failover
+- **Advanced RBAC** - Granular role-based access control
 
-### 📱 Mobile
+### 🌍 Multi-Cloud
 
-- **Mobile App** - iOS and Android app for incident management
-- **Push Notifications** - Real-time alert notifications
+- **AWS CloudWatch Integration** - Extend beyond Azure
+- **Google Cloud Monitoring** - Multi-cloud support
+- **Kubernetes Alert Support** - Container-native alerting
+- **Hybrid Cloud** - On-premises and cloud unified
 
 ---
 
 ## Future Considerations
 
-Features under evaluation:
+Features under evaluation (based on customer demand):
 
-- AWS CloudWatch integration
-- Google Cloud Monitoring integration
-- Kubernetes alert support
-- Custom alert aggregation rules
 - Machine learning for alert prioritization
-- Incident auto-remediation
+- Incident auto-remediation workflows
+- Custom alert aggregation rules
+- White-label options for MSPs
+- Advanced analytics and reporting
 
 ---
 

@@ -218,12 +218,12 @@ This prevents duplicate alerts within 5 minutes.
 **2. Check SolarWinds API Token**
 1. Verify token is valid
 2. Check token has create incident permission
-3. See [SolarWinds Setup](/platforms/solarwinds/setup)
+3. See [Platform Setup](/platforms/)
 
-**3. Check Logic App Configuration**
-1. Ensure API token stored in Key Vault
-2. Verify Key Vault access policy allows Logic App
-3. Check SolarWinds base URL is correct
+**3. Verify Deployment Configuration**
+1. Check deployment completed successfully
+2. Verify you provided correct ITSM API credentials during deployment
+3. Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) if configuration appears incorrect
 
 ### Incidents Created But Missing Data
 
@@ -321,7 +321,7 @@ Tags: Environment=Production, System=ITSM
 
 Test action groups:
 - After creation
-- After any configuration changes
+- After action group changes or updates
 - Monthly as part of DR testing
 
 ### 5. Monitor Action Group Usage

@@ -105,55 +105,22 @@ Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2FwaS5zYW1hbmFn
 
 ---
 
-## Configuring Cynteo Alert Bridge
+## How Credentials Are Stored
 
-### Option 1: Direct (Not Recommended)
+Cynteo Alert Bridge automatically stores your API token securely:
 
-Store token directly in Logic App configuration:
+**During Deployment:**
+1. You provide the API token in the deployment form
+2. Token is encrypted and stored in dedicated Azure Key Vault
+3. Logic App references token using managed identity
+4. Token never stored in plain text anywhere
 
-```json
-{
-  "SOLARWINDS_API_TOKEN": "Bearer eyJ0eXAiOi..."
-}
-```
-
-⚠️ **Not recommended** - Token visible in Logic App configuration
-
-### Option 2: Azure Key Vault (Recommended)
-
-Store token in Key Vault:
-
-#### Step 1: Add to Key Vault
-
-```bash
-az keyvault secret set \
-  --vault-name your-key-vault \
-  --name solarwinds-api-token \
-  --value "Bearer eyJ0eXAiOi..."
-```
-
-#### Step 2: Grant Logic App Access
-
-```bash
-# Enable Managed Identity on Logic App
-az logicapp identity assign \
-  --name your-logic-app \
-  --resource-group your-rg
-
-# Grant Key Vault access
-az keyvault set-policy \
-  --name your-key-vault \
-  --object-id <logic-app-identity-id> \
-  --secret-permissions get
-```
-
-#### Step 3: Reference in Logic App
-
-```json
-{
-  "SOLARWINDS_API_TOKEN": "@Microsoft.KeyVault(SecretUri=https://your-vault.vault.azure.net/secrets/solarwinds-api-token/)"
-}
-```
+**Security Features:**
+- ✅ Encrypted at rest (AES-256)
+- ✅ Encrypted in transit (TLS 1.2+)
+- ✅ Accessed only by authorized managed identity
+- ✅ Customer has read-only access to Key Vault
+- ❌ Token not visible in any configuration or logs
 
 ---
 
@@ -242,25 +209,21 @@ If token is compromised:
 
 ### Updating Token in Cynteo Alert Bridge
 
-After generating new token:
+After generating a new token, you'll need to update it in your Cynteo Alert Bridge deployment.
 
-#### If using Key Vault:
+**To update the API token:**
 
-```bash
-az keyvault secret set \
-  --vault-name your-key-vault \
-  --name solarwinds-api-token \
-  --value "Bearer NEW_TOKEN_HERE"
-```
+Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) with:
+- Your deployment name/resource group
+- Confirmation you have a new API token ready
+- Any other configuration changes needed
 
-Logic App automatically picks up new value within 5 minutes.
+Cynteo support will securely update the token in your deployment's Key Vault.
 
-#### If using direct configuration:
-
-1. Go to Logic App → **Configuration**
-2. Update `SOLARWINDS_API_TOKEN`
-3. Click **Save**
-4. Logic App restarts
+**Alternatively, redeploy:**
+- Deploy a new instance with the new token
+- Update action groups to use new webhook URL  
+- Delete old instance
 
 ---
 

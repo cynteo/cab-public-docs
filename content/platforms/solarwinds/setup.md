@@ -134,9 +134,9 @@ Your token must have:
 
 ### 1. Token Rotation
 
-- Rotate API tokens every 90 days
-- Update token in Azure Key Vault when rotated
-- See [Update API Token Guide](/platforms/solarwinds/api-token)
+- Rotate API tokens every 90 days minimum
+- Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to update the token in your deployment
+- See [API Token Management](/platforms/solarwinds/api-token) for details
 
 ### 2. IP Restrictions (if available)
 

@@ -20,10 +20,11 @@ Learn how Cynteo Alert Bridge protects your data and maintains security complian
 
 ### Secure Credential Management
 
-- **Azure Key Vault** - All API tokens stored encrypted in your Key Vault
-- **Managed Identity** - No hardcoded credentials in code or configuration
-- **Automatic Rotation** - Support for Key Vault secret rotation
-- **Least Privilege** - Logic App uses minimum required permissions
+- **Azure Key Vault** - API tokens stored encrypted in dedicated Key Vault deployed with the solution
+- **Secure Parameters** - Credentials configured as secure parameters on Logic App
+- **No Plain Text Storage** - Credentials never stored in plain text
+- **Managed Identity** - Solution uses managed identity for Key Vault access
+- **Least Privilege** - All components use minimum required permissions
 
 ### Network Security
 
@@ -61,20 +62,36 @@ Cynteo Alert Bridge is SOC 2 Type II compliant:
 
 ## Access Control
 
-### Azure RBAC
+### Managed Application Model
 
-Control who can:
-- View Logic App workflow
-- Modify configuration
-- Access run history
-- Manage credentials
+Cynteo Alert Bridge deploys as an **Azure Managed Application**, which means:
 
-### SolarWinds Permissions
+- **Customer Access:** Read-only visibility to deployed resources
+- **No Direct Modification:** Customers cannot change configurations directly
+- **Cynteo Management:** Cynteo Cloud manages the solution lifecycle
+- **Customer Control:** Customers control deployment and can delete at any time
 
-API token should have:
-- ✅ Create incidents
-- ✅ Update incidents
-- ✅ Add comments
+### What Customers Can See
+
+✅ **Read Access:**
+- Resource existence and status
+- High-level metrics and health
+- Deployment information
+- Billing and usage data
+
+❌ **No Access:**
+- Logic App workflow details or code
+- Function App code and variables
+- Storage account contents
+- Key Vault secrets
+- Run history with sensitive data
+
+### ITSM Platform Permissions
+
+The API token provided during deployment should have:
+- ✅ Create incidents/tickets
+- ✅ Update incidents/tickets
+- ✅ Add comments/notes
 - ❌ Delete incidents (not required)
 - ❌ Manage users (not required)
 

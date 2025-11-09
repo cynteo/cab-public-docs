@@ -337,20 +337,12 @@ az logicapp start \
 
 **Solution:**
 
-1. Check Logic App configuration:
-```bash
-az logicapp config appsettings list \
-  --name your-app \
-  --resource-group your-rg
-```
+The managed application configuration is set during deployment. If settings weren't applied correctly:
 
-2. Update if needed:
-```bash
-az logicapp config appsettings set \
-  --name your-app \
-  --resource-group your-rg \
-  --settings "INCIDENT_CATEGORY=Infrastructure"
-```
+1. Verify deployment completed successfully
+2. Check the deployment parameters you provided
+3. If incorrect, redeploy with correct settings, or
+4. Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) for configuration updates
 
 ---
 

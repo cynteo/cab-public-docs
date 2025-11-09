@@ -3,6 +3,12 @@ title: "Cynteo Alert Bridge"
 description: "Connect Azure Monitor alerts to your ITSM platform automatically"
 ---
 
+# Cynteo Alert Bridge
+
+**Connect Azure Monitor alerts to your ITSM platform automatically**
+
+---
+
 ## 🚀 What is Cynteo Alert Bridge?
 
 Cynteo Alert Bridge is a fully managed integration that automatically creates, updates, and resolves ITSM incidents based on your Azure Monitor alerts.
@@ -94,12 +100,14 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 
 ### Getting Started
 - [Quick Start Guide](/getting-started/quickstart)
+- [MSP Deployment Guide](/getting-started/msp-deployment) - For Managed Service Providers
 - [Azure Monitor Configuration](/getting-started/azure-monitor-setup)
 
 ### Platform Setup
-- [SolarWinds Service Desk](/platforms/solarwinds/)
-- ServiceNow (coming soon)
-- Jira Service Management (coming soon)
+- [SolarWinds Service Desk](/platforms/solarwinds/) - Fully supported
+- [ConnectWise](/platforms/connectwise/) - Coming Q4 2025 - Q1 2026
+- ServiceNow - Coming Q2 2026
+- Jira Service Management - Coming Q2 2026
 
 ### Configuration Guides
 - [Configure Alert Action Group](/guides/configure-alert-action-group)
@@ -108,7 +116,8 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 - [Incident Categories](/guides/categories)
 
 ### Reference
-- [Incident Fields Overview](/reference/incident-fields)
+- [Architecture Overview](/reference/architecture) - How it works
+- [Incident Fields](/reference/incident-fields)
 - [Alert Schema](/reference/alert-schema)
 - [Configuration Options](/reference/environment-variables)
 - [Security](/reference/security)

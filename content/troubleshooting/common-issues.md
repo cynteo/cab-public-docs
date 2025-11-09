@@ -60,29 +60,27 @@ Alert fires in Azure Monitor, but no incident appears in SolarWinds.
 **Error:** `401 Unauthorized` or `403 Forbidden`
 
 **Fix:**
-1. Generate new API token in SolarWinds
-2. Go to Key Vault resource in Cynteo Alert Bridge resource group
-3. Click "Secrets"
-4. Find secret (name: `solarwinds-*`)
-5. Click "New version"
-6. Paste new token
-7. Save
+1. Generate new API token in your ITSM platform
+2. Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to update the token
+3. Provide: Deployment name, resource group, confirmation new token is ready
+4. Cynteo support will securely update the credential
+5. Test with a new alert
 
 #### Cause 3: SolarWinds Category Doesn't Exist
 
 **Error:** `Category not found`
 
 **Fix:**
-- Option A: Create category in SolarWinds
-- Option B: Update Logic App to use existing category (contact support)
+- Option A: Create category in your ITSM platform
+- Option B: Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to use a different category
 
 #### Cause 4: Requester Email Invalid
 
 **Error:** `Requester not found`
 
 **Fix:**
-- Create user in SolarWinds with that email, OR
-- Update Logic App to use existing email (contact support)
+- Create user in your ITSM platform with that email, OR
+- Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) to use a different email
 
 ---
 
@@ -267,20 +265,21 @@ See [Priority Mapping Guide](/guides/priority-mapping)
 
 **How to update:**
 
-1. **Generate new token in SolarWinds**
-   - See [SolarWinds Setup](/platforms/solarwinds/setup)
+1. **Generate new token in your ITSM platform**
+   - Follow your platform's API token generation process
+   - See platform-specific guides: [Platforms](/platforms/)
 
-2. **Update in Key Vault**
-   - Go to Key Vault in Cynteo Alert Bridge resource group
-   - **Secrets** → Find your secret
-   - **New version** → Paste new token
-   - Save
+2. **Contact Cynteo Support:**
+   - Email: [support@cynteocloud.com](mailto:support@cynteocloud.com)
+   - Provide: Deployment name, resource group
+   - Include: Confirmation new token is ready
+   - Cynteo will securely update the credential
 
 3. **Test**
    - Trigger test alert
-   - Verify incident created
+   - Verify incident created with new token
 
-**No restart needed** - Logic App uses Key Vault reference and picks up new version automatically!
+**Typically updated within 24 hours**
 
 ---
 

@@ -169,9 +169,10 @@ az logicapp start \
 ```
 
 **Solutions:**
-- Verify token in Logic App configuration
-- Check "Bearer " prefix included
-- Generate new token if expired
+- Verify token is valid in your ITSM platform
+- Check token hasn't expired
+- Generate new token if needed
+- Contact support to update token in deployment
 - Test token with curl:
 
 ```bash
@@ -433,12 +434,9 @@ Before contacting support:
 2. **Alert rule configuration** (screenshot)
 3. **Action group configuration** (screenshot)
 4. **Error messages** (full text)
-5. **Logic App configuration:**
-   ```bash
-   az logicapp config appsettings list \
-     --name your-app \
-     --resource-group your-rg
-   ```
+5. **Deployment configuration:**
+   - Note the settings you provided during deployment
+   - Contact support if you need to verify current configuration
 
 ### Contact Support
 

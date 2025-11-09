@@ -26,11 +26,26 @@ Fully supported with comprehensive documentation.
 
 ## Coming Soon
 
+### 🔜 ConnectWise Manage & PSA
+
+**Target:** Q4 2025 - Q1 2026
+
+Full ConnectWise integration for MSPs:
+- Board-based routing
+- Ticket owner assignment
+- Company/contact mapping
+- Priority and status synchronization
+- Multi-customer support
+
+**Perfect for MSPs** managing multiple customer tenants.
+
+[View Roadmap](/reference/roadmap)
+
 ### 🔜 ServiceNow
 
-Full ServiceNow integration coming Q1 2026.
+**Target:** Q2 2026
 
-Features:
+Enterprise ServiceNow integration:
 - Incident creation and updates
 - Assignment group routing
 - Custom field mapping
@@ -40,9 +55,9 @@ Features:
 
 ### 🔜 Jira Service Management
 
-Jira Service Management support coming Q2 2026.
+**Target:** Q2 2026
 
-Features:
+Jira integration for development teams:
 - Issue creation and transitions
 - Custom workflows
 - Project-based routing
