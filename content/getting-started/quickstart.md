@@ -66,17 +66,20 @@ Before you begin, make sure you have:
 
 ## Step 2: Get Webhook URL
 
-Once deployment completes:
+Once deployment completes, retrieve the webhook URL from the managed application:
 
-1. Go to your resource group
-2. Find the Logic App (name: `logicapp-*`)
-3. Click **"Overview"**
-4. Copy the **"Webhook URL"** (you'll need this next)
+1. Go to **Azure Portal** → **Resource groups**
+2. Open your Cynteo Alert Bridge resource group
+3. Click the **Managed Application** resource
+4. Go to **Overview** → **Outputs** section
+5. Copy the **"Webhook URL"** value
 
 **Example URL:**
 ```
 https://prod-123.eastus.logic.azure.com:443/workflows/.../triggers/manual/paths/invoke?...
 ```
+
+⚠️ **Keep this URL secure** - it contains authentication credentials
 
 ---
 
@@ -110,7 +113,7 @@ For each alert you want sent to your ITSM platform:
 2. Select an alert rule
 3. Click **"Edit"**
 4. Under **"Actions"**, click **"+ Action group"**
-5. Select `alert-bridge-solarwinds`
+5. Select `alert-bridge-itsm`
 6. Click **"Save"**
 
 ---
@@ -126,7 +129,7 @@ For each alert you want sent to your ITSM platform:
 1. Monitor → Alerts → + Create → Alert rule
 2. Select a resource (e.g., VM)
 3. Condition: CPU > 1% (will fire immediately)
-4. Actions: Select `alert-bridge-solarwinds`
+4. Actions: Select `alert-bridge-itsm`
 5. Save and wait 1-2 minutes
 
 ### 4.2 Verify in Your ITSM Platform

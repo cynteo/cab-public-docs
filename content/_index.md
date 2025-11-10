@@ -3,12 +3,6 @@ title: "Cynteo Alert Bridge"
 description: "Connect Azure Monitor alerts to your ITSM platform automatically"
 ---
 
-# Cynteo Alert Bridge
-
-**Connect Azure Monitor alerts to your ITSM platform automatically**
-
----
-
 ## 🚀 What is Cynteo Alert Bridge?
 
 Cynteo Alert Bridge is a fully managed integration that automatically creates, updates, and resolves ITSM incidents based on your Azure Monitor alerts.

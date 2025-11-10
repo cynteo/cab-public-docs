@@ -24,11 +24,18 @@ Cynteo Alert Bridge integrates with Azure Monitor using **Action Groups** and **
 
 ---
 
-## Understanding Alert Flow
+## How It Works
 
 ```
-Azure Resource → Azure Monitor → Alert Rule → Action Group → Cynteo Alert Bridge → SolarWinds
+Azure Resource → Azure Monitor → Alert Rule → Action Group → Cynteo Alert Bridge → Your ITSM Platform
 ```
+
+When an Azure resource triggers an alert:
+1. **Azure Monitor** evaluates the condition
+2. **Alert fires** and notifies the action group
+3. **Action group** sends alert data to Cynteo Alert Bridge via webhook
+4. **Cynteo Alert Bridge** processes the alert and creates/updates an incident
+5. **ITSM platform** receives the incident with full context
 
 ---
 
@@ -47,26 +54,28 @@ Azure Resource → Azure Monitor → Alert Rule → Action Group → Cynteo Aler
 **Subscription:** Your Azure subscription  
 **Resource Group:** Same as Cynteo Alert Bridge (recommended)  
 **Region:** Global (default)  
-**Action group name:** `alert-bridge-solarwinds`  
-**Display name:** `SolarWinds` (shows in alert emails)
+**Action group name**  
+**Display name**
 
 ### 1.3 Add Webhook Action
 
 Click **"Next: Actions"**
 
-**Action type:** Webhook  
-**Name:** `Send to SolarWinds`  
-**URI:** Paste your Cynteo Alert Bridge webhook URL
+**Action Details:**
+- **Action type:** Webhook  
+- **Name:** `Send to ITSM`  
+- **URI:** Your Cynteo Alert Bridge webhook URL
 
-**To get webhook URL:**
-1. Go to your Cynteo Alert Bridge resource group
-2. Click the Logic App (name: `logicapp-*`)
-3. Click "Overview"
-4. Copy "Callback URL"
+**How to get the webhook URL:**
+1. Go to **Azure Portal** → **Resource groups**
+2. Open your Cynteo Alert Bridge resource group
+3. Click the **Managed Application** resource
+4. Go to **Overview** → **Outputs** tab
+5. Copy the **"WebhookURL"** value
 
-**✅ CRITICAL:** Check **"Enable the common alert schema"**
+⚠️ **CRITICAL:** Check **"Enable the common alert schema"** checkbox
 
-This ensures alerts are sent in the correct format!
+This is required for Cynteo Alert Bridge to properly parse alerts!
 
 ### 1.4 Review and Create
 
@@ -78,13 +87,13 @@ Click **"Review + create"** → **"Create"**
 
 ### Add Action Group to Alert Rule
 
-For each alert you want sent to SolarWinds:
+For each alert you want sent to your ITSM platform:
 
 1. **Monitor** → **Alerts** → **Alert rules**
 2. Select an alert rule
 3. Click **"Edit"** (or **"Manage actions"**)
 4. Under **"Action groups"**, click **"+ Add action group"**
-5. Select `alert-bridge-solarwinds`
+5. Select your Cynteo Alert Bridge action group
 6. Click **"Save"**
 
 **Repeat for all relevant alert rules.**
@@ -114,7 +123,7 @@ For each alert you want sent to SolarWinds:
 
 #### 3.3 Configure Actions
 
-**Action group:** Select `alert-bridge-solarwinds`
+**Action group:** Select `alert-bridge-itsm`
 
 #### 3.4 Configure Details
 
@@ -130,16 +139,16 @@ For each alert you want sent to SolarWinds:
 
 ## Alert Severity Mapping
 
-Azure Monitor severity maps to SolarWinds priority:
+Azure Monitor severity maps to ITSM platform priority:
 
-| Azure Severity | SolarWinds Priority | Use Case |
+| Azure Severity | Typical ITSM Priority | Use Case |
 |----------------|---------------------|----------|
 | Sev0 | High | Critical outages |
 | Sev1 | High | Major issues |
 | Sev2 | Medium | Performance degradation |
 | Sev3 | Low | Informational |
 
-**Configure this mapping during Cynteo Alert Bridge deployment.**
+Priority mapping is configured during Cynteo Alert Bridge deployment. See [Priority Mapping](/guides/priority-mapping) for details.
 
 ---
 
@@ -230,7 +239,7 @@ Cynteo Alert Bridge supports all Azure Monitor alert types:
 "CPU"
 ```
 
-Alert name becomes the SolarWinds incident title!
+Alert name becomes the incident title in your ITSM platform!
 
 ### 2. Set Appropriate Severity
 
@@ -241,7 +250,7 @@ Alert name becomes the SolarWinds incident title!
 
 ### 3. Add Helpful Descriptions
 
-Descriptions appear in SolarWinds incident details:
+Alert descriptions appear in the incident details:
 
 ```
 "Alert triggers when average CPU exceeds 80% for 5 minutes. 
@@ -277,7 +286,7 @@ This prevents multiple incidents for rapid-fire alerts.
 2. Lower threshold to trigger immediately (e.g., CPU > 1%)
 3. Save
 4. Wait 1-2 minutes
-5. Verify incident in SolarWinds
+5. Verify incident created in your ITSM platform
 6. Restore original threshold
 
 ### Method 2: Use Test Action Group
@@ -285,7 +294,7 @@ This prevents multiple incidents for rapid-fire alerts.
 1. Action group → **"Test"** button
 2. Select sample alert type
 3. Click **"Test"**
-4. Check SolarWinds for test incident
+4. Check your ITSM platform for the test incident
 
 ---
 
@@ -325,33 +334,43 @@ This prevents multiple incidents for rapid-fire alerts.
 1. Deploy Cynteo Alert Bridge in "hub" subscription
 2. Get webhook URL
 3. Create action groups in each subscription pointing to same URL
-4. All alerts go to same SolarWinds instance
+4. All alerts go to same ITSM platform instance
 
 ### Filtering by Resource Group
 
-Cynteo Alert Bridge processes ALL alerts sent to it. To filter:
+Cynteo Alert Bridge processes ALL alerts sent to it. To filter which alerts create incidents:
 
-1. Create separate action groups for different resource groups
-2. Or use [severity filtering](/guides/severity-filtering)
-3. Or configure SolarWinds rules to auto-close certain incidents
+1. Configure [severity filtering](/guides/severity-filtering) during deployment
+2. Create separate action groups for different resource types or severities
+3. Contact support to adjust filtering rules
+4. Use your ITSM platform's rules for additional filtering
 
-### Custom Fields
+### What's Included in Incidents
 
-Cynteo Alert Bridge includes:
+Cynteo Alert Bridge includes in every incident:
+- Alert name, severity, and description
+- Affected resource details (name, type, region, subscription)
+- Metric values or log query results
+- Time stamps (when fired, when resolved)
+- Direct links to Azure Portal for investigation
 - Alert ID (for deduplication)
-- Resource information
-- Metric values
-- Azure portal links
 
-For additional custom fields, see [Advanced Configuration](/guides/advanced-configuration).
+See [Incident Fields](/reference/incident-fields) for complete details.
 
 ---
 
 ## Next Steps
 
-- **[Configure Priority Mapping](/guides/priority-mapping)**
-- **[Set Up Severity Filtering](/guides/severity-filtering)**
-- **[Test Your Integration](/getting-started/quickstart.md#step-4-test-it)**
+Now that Azure Monitor is configured:
+
+- **[Test Your Integration](/getting-started/quickstart#step-4-test-integration)** - Verify end-to-end flow
+- **[Priority Mapping](/guides/priority-mapping)** - Understand severity-to-priority mapping
+- **[Severity Filtering](/guides/severity-filtering)** - Filter which alerts create incidents
+- **[Platform-Specific Guides](/platforms/)** - Platform-specific configuration details
+
+### For MSPs
+
+Managing customer tenants? See the [MSP Deployment Guide](/getting-started/msp-deployment) for multi-customer architecture and best practices.
 
 ---
 
