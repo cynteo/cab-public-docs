@@ -378,8 +378,8 @@ What Cynteo Alert Bridge sends to SolarWinds API:
 ## See Also
 
 - [Alert Schema](/reference/alert-schema) - Input from Azure Monitor
-- [Environment Variables](/reference/environment-variables) - Configuration options
 - [Priority Mapping](/guides/priority-mapping) - Customize mapping
+- [Architecture Overview](/reference/architecture) - How it works
 - [SolarWinds API](https://help.samanage.com/s/article/Incidents-API) - Official docs
 
 ---

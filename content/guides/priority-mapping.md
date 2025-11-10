@@ -121,9 +121,9 @@ For detailed priority configuration for your platform:
 
 ## See Also
 
-- [Configuration Options](/reference/environment-variables) - Available settings
 - [Severity Filtering](/guides/severity-filtering) - Filter by severity
 - [Incident Categories](/guides/categories) - Category configuration
+- [Architecture Overview](/reference/architecture) - How it works
 
 ---
 

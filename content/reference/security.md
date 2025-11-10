@@ -14,7 +14,7 @@ Learn how Cynteo Alert Bridge protects your data and maintains security complian
 
 ### Zero Data Storage
 
-- **No Persistence** - Alert data is processed in real-time and never stored
+- **Low Persistence** - Alert data is processed in real-time and minimally stored
 - **Stateless Processing** - Each alert is handled independently
 - **No Logging of Sensitive Data** - Only operational logs without credentials
 
@@ -29,27 +29,17 @@ Learn how Cynteo Alert Bridge protects your data and maintains security complian
 ### Network Security
 
 - **HTTPS Only** - All communication encrypted in transit
-- **Private Endpoints** - Optional VNet integration available
-- **IP Restrictions** - Configure allowed source IPs in Logic App
 - **Webhook Validation** - Azure Monitor signatures verified
 
 ---
 
 ## Compliance
 
-### SOC 2 Type II
-
-Cynteo Alert Bridge is SOC 2 Type II compliant:
-- Annual audits performed
-- Security controls verified
-- Compliance report available upon request
-
 ### Data Residency
 
 - **Your Subscription** - All resources deployed to YOUR Azure subscription
 - **Your Region** - Deploy to any Azure region you choose
 - **Your Control** - Full RBAC and access control
-- **No Third-Party Storage** - Data never leaves your environment
 
 ### GDPR Compliance
 
@@ -80,7 +70,7 @@ Cynteo Alert Bridge deploys as an **Azure Managed Application**, which means:
 - Billing and usage data
 
 ❌ **No Access:**
-- Logic App workflow details or code
+- Logic App secure parameters
 - Function App code and variables
 - Storage account contents
 - Key Vault secrets
@@ -115,70 +105,28 @@ The API token provided during deployment should have:
 
 ---
 
-## Security Best Practices
-
-### Recommended Configuration
-
-1. **Enable Diagnostic Logs**
-   - Send to Log Analytics workspace
-   - Monitor for anomalies
-   - Set up alerting
-
-2. **Use Managed Identity**
-   - Don't use connection strings
-   - Leverage Azure AD authentication
-   - Enable when possible
-
-3. **Rotate Credentials**
-   - Update SolarWinds token annually
-   - Use Key Vault for storage
-   - Enable secret expiration alerts
-
-4. **Network Isolation**
-   - Use Private Endpoints if required
-   - Configure NSG rules
-   - Limit public exposure
-
-5. **Monitor Access**
-   - Review RBAC assignments quarterly
-   - Audit Logic App modifications
-   - Track who accesses run history
-
----
-
 ## Incident Response
-
-### Security Incident Contacts
-
-- **Email:** security@cynteocloud.com
-- **Response Time:** < 4 hours for security issues
-- **Escalation:** 24/7 on-call team available
 
 ### Vulnerability Disclosure
 
 Report security vulnerabilities to:
-- security@cynteocloud.com
-- PGP key available upon request
-- Responsible disclosure policy
+- support@cynteocloud.com
 
 ---
 
 ## Compliance Documentation
 
 Available upon request:
-- SOC 2 Type II Report
-- Penetration Test Results
 - Security Architecture Diagrams
 - Data Flow Diagrams
 
-Contact [sales@cynteocloud.com](mailto:sales@cynteocloud.com) for access.
+Contact [info@cynteocloud.com](mailto:info@cynteocloud.com) for access.
 
 ---
 
 ## See Also
 
 - [Incident Fields](/reference/incident-fields) - What data is sent
-- [Environment Variables](/reference/environment-variables) - Configuration options
 - [SolarWinds Setup](/platforms/solarwinds/setup) - API token permissions
 
 ---

@@ -72,20 +72,10 @@ The API token needs these permissions:
 | **Create Incidents** | ✅ Yes | Create new incidents from alerts |
 | **Update Incidents** | ✅ Yes | Update incidents when alerts fire again |
 | **Add Comments** | ✅ Yes | Add alert updates as comments |
-| **Resolve Incidents** | ⚠️ Optional | Auto-resolve when alerts clear |
+| **Resolve Incidents** | ✅ Yes | Auto-resolve when alerts clear |
 | **Delete Incidents** | ❌ No | Not required (security best practice) |
 | **Manage Users** | ❌ No | Not required |
 | **Admin Access** | ❌ No | Not required |
-
-### Minimal Permissions
-
-For maximum security, only grant:
-```
-- incidents:read
-- incidents:create
-- incidents:update
-- comments:create
-```
 
 ---
 
@@ -119,7 +109,7 @@ Cynteo Alert Bridge automatically stores your API token securely:
 - ✅ Encrypted at rest (AES-256)
 - ✅ Encrypted in transit (TLS 1.2+)
 - ✅ Accessed only by authorized managed identity
-- ✅ Customer has read-only access to Key Vault
+- ✅ Customer has read-only access to Key Vault but not data within it
 - ❌ Token not visible in any configuration or logs
 
 ---
@@ -149,32 +139,9 @@ $headers = @{
 Invoke-RestMethod -Uri "https://api.samanage.com/incidents.json" -Headers $headers
 ```
 
-### Via Logic App Test
-
-1. Deploy Logic App with token
-2. Trigger a test alert
-3. Check Logic App run history
-4. Look for SolarWinds API errors
-
 ---
 
 ## Token Security
-
-### Best Practices
-
-1. **Use Key Vault** - Never store in plain text
-2. **Rotate Regularly** - Update every 90 days
-3. **Minimal Permissions** - Only grant what's needed
-4. **Monitor Usage** - Track API calls for anomalies
-5. **Separate Tokens** - Different tokens for dev/prod
-
-### Rotation Schedule
-
-| Environment | Rotation Frequency |
-|-------------|-------------------|
-| Production | Every 90 days |
-| Staging | Every 180 days |
-| Development | Annual |
 
 ### Compromised Token
 
@@ -182,9 +149,7 @@ If token is compromised:
 
 1. **Immediately Revoke** in SolarWinds
 2. **Generate New Token**
-3. **Update Key Vault** with new token
-4. **Restart Logic App**
-5. **Review Audit Logs** for unauthorized access
+3. **Re-deploy or contact support** with new token
 
 ---
 
@@ -262,24 +227,13 @@ Cynteo support will securely update the token in your deployment's Key Vault.
 - Secret deleted
 
 **Solutions:**
-1. Verify secret exists: `az keyvault secret show`
-2. Check Logic App Managed Identity has access
-3. Restore secret if deleted
+1. Contact support
 
 ---
 
 ## API Limits
 
-Be aware of SolarWinds API rate limits:
-
-| Plan | Requests/Hour | Requests/Day |
-|------|---------------|--------------|
-| Trial | 100 | 1,000 |
-| Standard | 1,000 | 10,000 |
-| Premium | 5,000 | 50,000 |
-| Enterprise | Custom | Custom |
-
-Cynteo Alert Bridge automatically respects these limits with request queuing.
+Be aware of SolarWinds API rate limits
 
 ---
 
@@ -287,7 +241,7 @@ Cynteo Alert Bridge automatically respects these limits with request queuing.
 
 - [SolarWinds Setup](/platforms/solarwinds/setup) - Complete setup guide
 - [Security Overview](/reference/security) - Security best practices
-- [Environment Variables](/reference/environment-variables) - Configuration options
+- [Architecture Overview](/reference/architecture) - How it works
 
 ---
 

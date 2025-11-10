@@ -73,7 +73,7 @@ During deployment, you can configure:
 - **Assignee/Group** - Auto-assignment rules
 - **Requester** - Default requester or reporter
 
-See [Configuration Options](/reference/environment-variables) for details.
+Contact [support@cynteocloud.com](mailto:support@cynteocloud.com) for configuration details.
 
 ---
 
@@ -102,7 +102,7 @@ See [Security Overview](/reference/security) for more information.
 ## See Also
 
 - [Alert Schema](/reference/alert-schema) - Input from Azure Monitor
-- [Configuration Options](/reference/environment-variables) - Customize fields
+- [Architecture Overview](/reference/architecture) - How it works
 - [Security](/reference/security) - Data privacy and security
 
 ---

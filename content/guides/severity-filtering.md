@@ -148,8 +148,8 @@ For detailed filtering configuration for your platform:
 ## See Also
 
 - [Priority Mapping](/guides/priority-mapping) - Map severities to priorities
-- [Configuration Options](/reference/environment-variables) - Available settings
 - [Azure Monitor Setup](/getting-started/azure-monitor-setup) - Alert configuration
+- [Architecture Overview](/reference/architecture) - How it works
 
 ---
 

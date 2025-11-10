@@ -100,8 +100,8 @@ To use custom categories, specify them during deployment or contact [support@cyn
 
 ## See Also
 
-- [Configuration Options](/reference/environment-variables) - All settings
 - [Priority Mapping](/guides/priority-mapping) - Priority configuration
+- [Platform Guides](/platforms/) - Platform-specific details
 
 ---
 

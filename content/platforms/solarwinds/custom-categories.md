@@ -238,8 +238,8 @@ To configure custom categories for your deployment, contact [support@cynteocloud
 ## See Also
 
 - [SolarWinds Setup](/platforms/solarwinds/setup) - SolarWinds prerequisites
-- [Configuration Options](/reference/environment-variables) - Available settings
 - [Priority Mapping](/guides/priority-mapping) - Priority configuration
+- [Categories Guide](/platforms/solarwinds/categories) - Category configuration
 
 ---
 

@@ -12,8 +12,8 @@ Cynteo Alert Bridge is a fully managed integration that automatically creates, u
 - ✅ **Automatic Incident Management** - Create tickets when alerts fire, update when they continue, resolve when they clear
 - ✅ **Smart Deduplication** - Multiple alerts for the same issue update one ticket, not create duplicates
 - ✅ **Rich Context** - Incidents include alert details, metrics, resource information, and direct links to Azure Portal
-- ✅ **Configurable Mapping** - Map Azure alert severity to SolarWinds priority levels
-- ✅ **Secure & Compliant** - No credentials stored, uses Azure Managed Identity and Key Vault
+- ✅ **Configurable Mapping** - Map Azure alert severity to ITSM priority levels
+- ✅ **Secure & Compliant** - Uses Azure Managed Identity and Key Vault for credential storage
 - ✅ **Zero Maintenance** - Fully managed solution, automatic updates included
 
 ---
@@ -49,7 +49,7 @@ When an alert fires:
 
 | Plan | Alerts/Month | Price/Month | Duration |
 |------|-------------|-------------|----------|
-| **Trial** | Up to 1,000 | Free | 30 days |
+| **Trial** | Up to 500 | Free | 30 days |
 | **Basic** | Up to 1,000 | $49 | Monthly |
 | **Professional** | Up to 5,000 | $149 | Monthly |
 | **Business** | Up to 20,000 | $399 | Monthly |
@@ -80,7 +80,7 @@ Before deployment, ensure you have:
    - Azure subscription and resource group
    - ITSM platform API credentials
    - Incident preferences (category, priority mapping)
-   - Contact email for notifications
+   - Email for API integration and notifications
 4. **Deploy** (~5-10 minutes)
 5. **Connect Azure Alerts** via Action Groups
 
@@ -99,7 +99,7 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 
 ### Platform Setup
 - [SolarWinds Service Desk](/platforms/solarwinds/) - Fully supported
-- [ConnectWise](/platforms/connectwise/) - Coming Q4 2025 - Q1 2026
+- [ConnectWise Manage](/platforms/connectwise/) - Coming Q4 2025 - Q1 2026
 - ServiceNow - Coming Q2 2026
 - Jira Service Management - Coming Q2 2026
 
@@ -113,7 +113,6 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 - [Architecture Overview](/reference/architecture) - How it works
 - [Incident Fields](/reference/incident-fields)
 - [Alert Schema](/reference/alert-schema)
-- [Configuration Options](/reference/environment-variables)
 - [Security](/reference/security)
 - [API Reference](/reference/api)
 - [Changelog](/reference/changelog)
@@ -127,9 +126,9 @@ For detailed deployment instructions, see the [Quick Start Guide](/getting-start
 
 ## 🔒 Security & Privacy
 
-- **No Data Storage** - Alert data is processed in real-time, not stored
+- **Minimal Data Storage** - Alert data is processed in real-time
 - **Encrypted Secrets** - API tokens stored in Azure Key Vault
-- **Managed Identity** - No hardcoded credentials
+- **Managed Identity** - No hardcoded credentials for resources inside environment
 - **Private Deployment** - Resources deployed to YOUR subscription
 - **SOC 2 Compliant** - Meets enterprise security standards
 

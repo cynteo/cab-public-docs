@@ -307,7 +307,8 @@ Cynteo monitors:
 ## See Also
 
 - [Security Overview](/reference/security) - Detailed security information
-- [Configuration Options](/reference/environment-variables) - Available settings
+- [Incident Fields](/reference/incident-fields) - What data is sent
+- [Alert Schema](/reference/alert-schema) - Input format
 - [API Reference](/reference/api) - Technical integration details
 
 ---
