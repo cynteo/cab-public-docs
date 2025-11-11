@@ -175,7 +175,8 @@ Customer Azure Subscription
 
 | Plan | Concurrent Alerts | Processing Time | Throughput |
 |------|-------------------|-----------------|------------|
-| Trial/Basic | 10 | < 3 seconds | 1,000/month |
+| Trial | 10 | < 3 seconds | 500/month |
+| Basic | 10 | < 3 seconds | 1,000/month |
 | Professional | 25 | < 3 seconds | 5,000/month |
 | Business | 50 | < 2 seconds | 20,000/month |
 | Enterprise | 100+ | < 2 seconds | Unlimited |
